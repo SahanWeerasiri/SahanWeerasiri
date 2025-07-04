@@ -2,7 +2,6 @@
 <div align="center">
   <img src="https://profile-counter.glitch.me/SahanWeerasiri/count.svg?"  />
 </div>
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sahanweerasiri" alt="sahanweerasiri" /></a> </p>
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
