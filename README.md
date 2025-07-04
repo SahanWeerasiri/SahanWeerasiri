@@ -1,6 +1,7 @@
 <h1 align="center">Hi 👋, I'm Sahan Lahiru</h1>
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=sahanweerasiri&label=Profile%20views&color=0e75b6&style=flat" alt="sahanweerasiri" /> </p>
-
+<div align="center">
+  <img src="https://profile-counter.glitch.me/SahanWeerasiri/count.svg?"  />
+</div>
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sahanweerasiri" alt="sahanweerasiri" /></a> </p>
 
 <h3 align="left">Connect with me:</h3>
