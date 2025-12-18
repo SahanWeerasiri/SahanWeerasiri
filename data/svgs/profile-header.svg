@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#a371f7;stop-opacity:1" />
+        </linearGradient>
+        <clipPath id="avatarClip">
+            <circle cx="125" cy="150" r="70"/>
+        </clipPath>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="800" height="300" fill="#0d1117" rx="20" ry="20"/>
+    
+    <!-- Avatar -->
+    <circle cx="125" cy="150" r="75" fill="url(#gradient)"/>
+    <image href="https://avatars.githubusercontent.com/u/131955636?u=0c30ffa00ade815ecbe2335517b6ce0b1f866e60&v=4" x="50" y="80" width="150" height="150" clip-path="url(#avatarClip)"/>
+    
+    <!-- Profile Info -->
+    <text x="250" y="110" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="url(#gradient)">
+        Sahan Lahiru
+    </text>
+    
+    <text x="250" y="150" font-family="'Courier New', monospace" font-size="20" fill="#8b949e">
+        @SahanWeerasiri
+    </text>
+    
+    
+    
+    
+    
+    <!-- Join Date -->
+    <text x="250" y="260" font-family="Arial, sans-serif" font-size="14" fill="#8b949e">
+        Joined GitHub • April 2023
+    </text>
+</svg>

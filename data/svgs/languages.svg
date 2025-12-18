@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#a371f7;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="700" height="400" fill="#21262d" rx="20" ry="20" stroke="#30363d" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="350" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="url(#titleGradient)">
+        💻 Most Used Languages
+    </text>
+    
+    <!-- Languages -->
+    
+        <g transform="translate(100, 80)">
+            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+                Python
+            </text>
+            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+                17.57%
+            </text>
+            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
+            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#3572A5">
+                <animate attributeName="width" from="0" to="500" dur="1s" fill="freeze" begin="0s"/>
+            </rect>
+        </g>
+        
+        <g transform="translate(100, 140)">
+            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+                Java
+            </text>
+            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+                15.28%
+            </text>
+            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
+            <rect x="0" y="25" width="434.8321001707456" height="20" rx="10" ry="10" fill="#b07219">
+                <animate attributeName="width" from="0" to="434.8321001707456" dur="1s" fill="freeze" begin="0.2s"/>
+            </rect>
+        </g>
+        
+        <g transform="translate(100, 200)">
+            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+                Tcl
+            </text>
+            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+                10.97%
+            </text>
+            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
+            <rect x="0" y="25" width="312.1798520204895" height="20" rx="10" ry="10" fill="#6e7681">
+                <animate attributeName="width" from="0" to="312.1798520204895" dur="1s" fill="freeze" begin="0.4s"/>
+            </rect>
+        </g>
+        
+        <g transform="translate(100, 260)">
+            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+                C++
+            </text>
+            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+                8.35%
+            </text>
+            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
+            <rect x="0" y="25" width="237.6209447922595" height="20" rx="10" ry="10" fill="#f34b7d">
+                <animate attributeName="width" from="0" to="237.6209447922595" dur="1s" fill="freeze" begin="0.6000000000000001s"/>
+            </rect>
+        </g>
+        
+        <g transform="translate(100, 320)">
+            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+                C
+            </text>
+            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+                7.88%
+            </text>
+            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
+            <rect x="0" y="25" width="224.24587364826408" height="20" rx="10" ry="10" fill="#6e7681">
+                <animate attributeName="width" from="0" to="224.24587364826408" dur="1s" fill="freeze" begin="0.8s"/>
+            </rect>
+        </g>
+        
+    
+    <!-- Legend -->
+    <g transform="translate(100, 420)">
+        <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+            * Based on code usage across public repositories
+        </text>
+    </g>
+</svg>
