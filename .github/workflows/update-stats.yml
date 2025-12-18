@@ -1,4 +1,4 @@
-name: GitHub Stats Components
+name: GitHub Stats SVGs
 on:
     schedule:
         - cron: "0 0 * * *"
@@ -7,7 +7,7 @@ on:
         branches: [main]
 
 jobs:
-    generate-components:
+    generate-svgs:
         runs-on: ubuntu-latest
         permissions:
             contents: write
@@ -20,23 +20,6 @@ jobs:
               with:
                   node-version: "18"
 
-            - name: Setup Python
-              uses: actions/setup-python@v4
-              with:
-                  python-version: "3.10"
-
-            - name: Install Dependencies
-              run: |
-                  # Install wkhtmltoimage for Python
-                  sudo apt-get update
-                  sudo apt-get install -y wkhtmltopdf xvfb
-
-                  # Install Python packages
-                  pip install imgkit
-
-                  # Install ImageMagick for GIF creation (optional)
-                  sudo apt-get install -y imagemagick
-
             - name: Generate Stats Data
               env:
                   TOKEN: ${{ secrets.TOKEN }}
@@ -46,32 +29,52 @@ jobs:
                   echo "📊 Fetching GitHub stats..."
                   node scripts/fetch-stats.js
 
-            - name: Generate HTML Components
+            - name: Generate SVGs
               run: |
-                  echo "🎨 Generating HTML components..."
-                  node scripts/generate-components.js
+                  echo "🎨 Generating SVG graphics..."
+                  node scripts/generate-svgs.js
 
-            - name: Generate Component Images
+            - name: Update README with SVGs
               run: |
-                  echo "📸 Generating images from components..."
-                  python scripts/generate-images.py
+                  echo "📝 Updating README.md..."
+                  cat > README.md << 'EOF'
+                  <h1 align="center">Hi 👋, I'm Sahan Lahiru</h1>
+                  <div align="center">
+                    <img src="https://profile-counter.glitch.me/SahanWeerasiri/count.svg?"  />
+                    <img align="right" height="150" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZW1naWttNms1dXNreTgybG8wcmIxMzE3ZjJ1NXRrc2doYXp5YWJmdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/I0e4u216Qhww8eRTVq/giphy.gif"  />
+                  </div>
 
-            - name: List Generated Files
-              run: |
-                  echo "📁 Data directory contents:"
-                  find data/ -type f -name "*.json" -o -name "*.html" -o -name "*.png" -o -name "*.gif" | sort
-                  echo ""
-                  echo "📸 Generated images:"
-                  ls -lh data/images/ || echo "No images found"
+                  <h3 align="left">Connect with me:</h3>
+                  <p align="left">
+                  <a href="https://www.linkedin.com/in/sahan-weerasiri-1524482b0" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="sahanweerasiri" height="30" width="40" /></a>
+                  </p>
+
+                  ## 📊 GitHub Stats Dashboard
+
+                  ### 👤 Profile Header
+                  ![Profile](data/svgs/profile-header.svg)
+
+                  ### 📈 GitHub Statistics  
+                  ![GitHub Stats](data/svgs/github-stats.svg)
+
+                  ### 💻 Most Used Languages
+                  ![Languages](data/svgs/languages.svg)
+
+                  ### 🎯 Quick Overview
+                  ![Combined Stats](data/svgs/readme-combined.svg)
+
+                  ---
+                  *SVGs update automatically every 24 hours via GitHub Actions*
+                  EOF
 
             - name: Commit Updates
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add data/
+                  git add data/ README.md
                   if git diff --cached --quiet; then
                     echo "No changes to commit"
                   else
-                    git commit -m "📊 Update component images - $(date +'%Y-%m-%d %H:%M')"
+                    git commit -m "📊 Update GitHub stats SVGs - $(date +'%Y-%m-%d %H:%M')"
                     git push
                   fi
