@@ -44,7 +44,7 @@ jobs:
 
             - name: Generate Everything
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  TOKEN: ${{ secrets.TOKEN }}
                   GITHUB_USERNAME: ${{ github.repository_owner }}
               run: |
                   mkdir -p data/screenshots
