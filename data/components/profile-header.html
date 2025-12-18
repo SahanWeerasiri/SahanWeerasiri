@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        .profile-card {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #58a6ff;
+            box-shadow: 0 8px 32px rgba(88, 166, 255, 0.3);
+        }
+        .profile-info {
+            color: #f0f6fc;
+        }
+        .name {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            background: linear-gradient(90deg, #58a6ff, #a371f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .username {
+            font-size: 1.5rem;
+            color: #8b949e;
+            margin: 0 0 15px 0;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .bio {
+            font-size: 1.2rem;
+            color: #c9d1d9;
+            margin: 0 0 15px 0;
+            line-height: 1.5;
+            max-width: 500px;
+        }
+        .location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #8b949e;
+            font-size: 1.1rem;
+        }
+        .join-date {
+            color: #8b949e;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="profile-card">
+        <img src="https://avatars.githubusercontent.com/u/131955636?u=0c30ffa00ade815ecbe2335517b6ce0b1f866e60&v=4" alt="SahanWeerasiri" class="avatar">
+        <div class="profile-info">
+            <h1 class="name">Sahan Lahiru</h1>
+            <div class="username">@SahanWeerasiri</div>
+            
+            
+            <div class="join-date">Joined GitHub • April 2023</div>
+        </div>
+    </div>
+</body>
+</html>

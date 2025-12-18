@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 400px;
+        }
+        .title {
+            color: #58a6ff;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            width: 100%;
+        }
+        .stat-item {
+            background: #21262d;
+            border: 2px solid #30363d;
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.2);
+        }
+        .stat-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stat-content {
+            flex: 1;
+        }
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #f0f6fc;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 1rem;
+            color: #8b949e;
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">📊 GitHub Statistics</h1>
+    <div class="stats-grid">
+        
+        <div class="stat-item">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-content">
+                <div class="stat-value">37</div>
+                <div class="stat-label">Total Stars</div>
+            </div>
+        </div>
+    
+        <div class="stat-item">
+            <div class="stat-icon">📝</div>
+            <div class="stat-content">
+                <div class="stat-value">2,436</div>
+                <div class="stat-label">Commits (Last Year)</div>
+            </div>
+        </div>
+    
+        <div class="stat-item">
+            <div class="stat-icon">🔀</div>
+            <div class="stat-content">
+                <div class="stat-value">225</div>
+                <div class="stat-label">Pull Requests</div>
+            </div>
+        </div>
+    
+        <div class="stat-item">
+            <div class="stat-icon">🐛</div>
+            <div class="stat-content">
+                <div class="stat-value">117</div>
+                <div class="stat-label">Issues Created</div>
+            </div>
+        </div>
+    
+        <div class="stat-item">
+            <div class="stat-icon">🤝</div>
+            <div class="stat-content">
+                <div class="stat-value">75</div>
+                <div class="stat-label">Repos Contributed</div>
+            </div>
+        </div>
+    
+        <div class="stat-item">
+            <div class="stat-icon">👥</div>
+            <div class="stat-content">
+                <div class="stat-value">9</div>
+                <div class="stat-label">Followers</div>
+            </div>
+        </div>
+    
+        <div class="stat-item">
+            <div class="stat-icon">📂</div>
+            <div class="stat-content">
+                <div class="stat-value">102</div>
+                <div class="stat-label">Public Repos</div>
+            </div>
+        </div>
+    
+    </div>
+    <script>
+        // Add pulse animation to stats
+        setTimeout(() => {
+            document.querySelectorAll('.stat-item').forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('pulse');
+                    setTimeout(() => item.classList.remove('pulse'), 1000);
+                }, index * 200);
+            });
+        }, 500);
+    </script>
+</body>
+</html>
