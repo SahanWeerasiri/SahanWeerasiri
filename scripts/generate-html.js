@@ -63,11 +63,21 @@ function getLanguageColor(language) {
     return colors[language] || '#6e7681';
 }
 
-// Generate contribution calendar HTML
+// Generate contribution calendar HTML - WITH ERROR HANDLING
 function generateContributionCalendar(weeks) {
-    let calendarHTML = '';
+    // If weeks is undefined or not an array, return empty
+    if (!weeks || !Array.isArray(weeks)) {
+        return `
+        <div class="calendar-container">
+            <div class="calendar-placeholder">
+                <i class="fas fa-calendar-alt" style="font-size: 48px; margin-bottom: 20px; color: var(--text-muted);"></i>
+                <p style="color: var(--text-secondary);">Contribution calendar data not available</p>
+            </div>
+        </div>
+        `;
+    }
 
-    // Create a simple calendar representation
+    let calendarHTML = '';
     const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
     calendarHTML += '<div class="calendar-container">';
@@ -79,22 +89,49 @@ function generateContributionCalendar(weeks) {
 
     calendarHTML += '<div class="calendar-grid">';
 
-    weeks.forEach(week => {
-        week.contributionDays.forEach(day => {
-            const date = new Date(day.date);
-            const dayOfWeek = date.getDay();
+    // Filter out invalid weeks
+    const validWeeks = weeks.filter(week =>
+        week && week.contributionDays && Array.isArray(week.contributionDays)
+    );
 
-            let intensity = 'level-0';
-            if (day.contributionCount > 0) intensity = 'level-1';
-            if (day.contributionCount > 5) intensity = 'level-2';
-            if (day.contributionCount > 10) intensity = 'level-3';
-            if (day.contributionCount > 20) intensity = 'level-4';
+    // If no valid weeks, show message
+    if (validWeeks.length === 0) {
+        calendarHTML += `
+            <div style="grid-column: 1 / span 7; text-align: center; padding: 40px;">
+                <p style="color: var(--text-secondary);">No contribution data available</p>
+            </div>
+        `;
+    } else {
+        // Process valid weeks
+        validWeeks.forEach(week => {
+            week.contributionDays.forEach(day => {
+                if (!day || !day.date) return;
 
-            calendarHTML += `<div class="calendar-day ${intensity}" 
-        title="${formatDate(day.date)}: ${day.contributionCount} contributions"
-        style="grid-column: ${dayOfWeek + 1}"></div>`;
+                try {
+                    const date = new Date(day.date);
+                    if (isNaN(date.getTime())) return; // Invalid date
+
+                    const dayOfWeek = date.getDay();
+                    const count = day.contributionCount || 0;
+
+                    let intensity = 'level-0';
+                    if (count > 0) intensity = 'level-1';
+                    if (count > 5) intensity = 'level-2';
+                    if (count > 10) intensity = 'level-3';
+                    if (count > 20) intensity = 'level-4';
+
+                    const dayTitle = `${formatDate(day.date)}: ${count} contributions`;
+
+                    calendarHTML += `<div class="calendar-day ${intensity}" 
+                        title="${dayTitle}"
+                        style="grid-column: ${dayOfWeek + 1}"></div>`;
+                } catch (error) {
+                    // Skip this day if there's an error
+                    console.warn('Error processing calendar day:', error);
+                }
+            });
         });
-    });
+    }
 
     calendarHTML += '</div>';
 
