@@ -4,12 +4,12 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.PERSONAL_TOKEN;
+const TOKEN = process.env.TOKEN || process.env.PERSONAL_TOKEN;
 const USERNAME = process.env.GITHUB_USERNAME || 'sahan-lahiru';
 const OUTPUT_FILE = path.join(__dirname, '../data/github-stats.json');
 
-if (!GITHUB_TOKEN) {
-    console.error('❌ GITHUB_TOKEN is required');
+if (!TOKEN) {
+    console.error('❌ TOKEN is required');
     process.exit(1);
 }
 
@@ -17,7 +17,7 @@ if (!GITHUB_TOKEN) {
 async function fetchAPI(url, options = {}) {
     const response = await fetch(url, {
         headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
+            'Authorization': `Bearer ${TOKEN}`,
             'Accept': 'application/vnd.github.v3+json',
             'User-Agent': 'GitHub-Stats-Fetcher',
             ...options.headers
@@ -125,7 +125,7 @@ async function fetchGraphQLStats() {
     const response = await fetch('https://api.github.com/graphql', {
         method: 'POST',
         headers: {
-            'Authorization': `Bearer ${GITHUB_TOKEN}`,
+            'Authorization': `Bearer ${TOKEN}`,
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
