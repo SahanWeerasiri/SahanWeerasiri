@@ -117,29 +117,46 @@ function generateContributionCalendar(weeks) {
 // Generate language bars HTML
 function generateLanguageBars(languages) {
     let barsHTML = '';
-    const topLanguages = Object.entries(languages).slice(0, 5).map(([lang, data]) => ({
-        name: lang,
-        percentage: data.percentage
-    }));
 
-    topLanguages.forEach(([language, data]) => {
-        const percentage = parseFloat(data.percentage);
-        const color = getLanguageColor(language);
+    // Check if languages is an object
+    if (!languages || typeof languages !== 'object') {
+        console.warn('❌ Languages data is not available or not an object');
+        return '<p class="no-languages">Language data not available</p>';
+    }
 
-        barsHTML += `
-      <div class="language-item">
-        <div class="language-info">
-          <span class="language-name">${language}</span>
-          <span class="language-percentage">${percentage}%</span>
-        </div>
-        <div class="language-bar">
-          <div class="language-bar-fill" style="width: ${percentage}%; background-color: ${color};"></div>
-        </div>
-      </div>
-    `;
-    });
+    try {
+        // Convert languages object to array and sort by percentage
+        const languagesArray = Object.entries(languages)
+            .map(([name, data]) => ({
+                name: name,
+                percentage: typeof data === 'object' ? parseFloat(data.percentage || data) : parseFloat(data)
+            }))
+            .sort((a, b) => b.percentage - a.percentage)
+            .slice(0, 5); // Take top 5
 
-    return barsHTML;
+        languagesArray.forEach(langData => {
+            const { name: language, percentage } = langData;
+            const color = getLanguageColor(language);
+
+            barsHTML += `
+          <div class="language-item">
+            <div class="language-info">
+              <span class="language-name">${language}</span>
+              <span class="language-percentage">${percentage.toFixed(2)}%</span>
+            </div>
+            <div class="language-bar">
+              <div class="language-bar-fill" style="width: ${percentage}%; background-color: ${color};"></div>
+            </div>
+          </div>
+        `;
+        });
+
+        return barsHTML;
+
+    } catch (error) {
+        console.error('Error processing languages:', error);
+        return '<p class="error">Error displaying languages</p>';
+    }
 }
 
 // Generate repository cards HTML
@@ -202,7 +219,6 @@ function generateHTML(stats) {
     } = stats;
 
     const lastUpdated = formatDate(metadata.fetchedAt);
-    const topLanguages = Object.entries(languages).slice(0, 5);
 
     return `<!DOCTYPE html>
 <html lang="en">
