@@ -1,63 +1,77 @@
-name: Update GitHub Stats Dashboard
+name: GitHub Stats Dashboard
 on:
     schedule:
         - cron: "0 0 * * *" # Daily at midnight UTC
-    workflow_dispatch:
-    push:
-        branches: [main]
+    workflow_dispatch: # Manual trigger
+    push: # Trigger on push
+        branches:
+            - main # Only main branch
+        paths:
+            - "scripts/**" # When script files change
+            - ".github/workflows/**" # When workflow changes
+            - "requirements.txt" # When dependencies change
 
 jobs:
-    update-dashboard:
+    generate-dashboard:
         runs-on: ubuntu-latest
         permissions:
             contents: write
 
         steps:
-            # 1. Checkout code
             - name: Checkout Repository
               uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0 # Get all history for proper git diff
 
-            # 2. Setup Node.js (without cache since no lock file)
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: "3.10"
+
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
                   node-version: "18"
-                  # Removed cache since we don't have package-lock.json
 
-            # 3. Install dependencies directly
             - name: Install Dependencies
               run: |
-                  echo "Installing puppeteer..."
-                  npm install puppeteer@21.0.0
+                  # Install wkhtmltoimage for Python imgkit
+                  sudo apt-get update
+                  sudo apt-get install -y wkhtmltopdf
 
-            # 4. Create output directory
-            - name: Create Data Directory
-              run: mkdir -p data/screenshots
+                  # Install Python package
+                  pip install imgkit
 
-            # 5. Fetch stats
-            - name: Fetch GitHub Stats
+            - name: Generate Everything
               env:
-                  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   GITHUB_USERNAME: ${{ github.repository_owner }}
-              run: node scripts/fetch-stats.js
+              run: |
+                  mkdir -p data/screenshots
+                  echo "📊 Fetching GitHub stats..."
+                  node scripts/fetch-stats.js
+                  echo "🎨 Generating HTML dashboard..."
+                  node scripts/generate-html.js
+                  echo "📸 Generating screenshots..."
+                  python scripts/generate-screenshot.py
 
-            # 6. Generate HTML
-            - name: Generate HTML Dashboard
-              run: node scripts/generate-html.js
+            - name: Check for Changes
+              id: changes
+              run: |
+                  echo "Checking for changes in data/ directory..."
+                  git add data/
+                  if git diff --cached --quiet; then
+                    echo "has_changes=false" >> $GITHUB_OUTPUT
+                    echo "📭 No changes to commit"
+                  else
+                    echo "has_changes=true" >> $GITHUB_OUTPUT
+                    echo "📬 Changes detected, will commit"
+                  fi
 
-            # 7. Generate screenshots
-            - name: Generate Screenshots
-              run: node scripts/generate-screenshot.js
-
-            # 8. Commit and push changes
-            - name: Commit and Push
+            - name: Commit and Push Changes
+              if: steps.changes.outputs.has_changes == 'true'
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git add data/
-                  if git diff --cached --quiet; then
-                    echo "No changes to commit"
-                  else
-                    git commit -m "📊 Auto-update GitHub stats - $(date -u +'%Y-%m-%d %H:%M UTC')"
-                    git push
-                  fi
+                  git commit -m "🤖 Auto-update GitHub stats - $(date +'%Y-%m-%d %H:%M UTC')"
+                  git push
