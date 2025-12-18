@@ -1,77 +1,77 @@
-name: GitHub Stats Dashboard
+name: GitHub Stats Components
 on:
     schedule:
-        - cron: "0 0 * * *" # Daily at midnight UTC
-    workflow_dispatch: # Manual trigger
-    push: # Trigger on push
-        branches:
-            - main # Only main branch
-        paths:
-            - "scripts/**" # When script files change
-            - ".github/workflows/**" # When workflow changes
-            - "requirements.txt" # When dependencies change
+        - cron: "0 0 * * *"
+    workflow_dispatch:
+    push:
+        branches: [main]
 
 jobs:
-    generate-dashboard:
+    generate-components:
         runs-on: ubuntu-latest
         permissions:
             contents: write
 
         steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0 # Get all history for proper git diff
-
-            - name: Setup Python
-              uses: actions/setup-python@v4
-              with:
-                  python-version: "3.10"
+            - uses: actions/checkout@v4
 
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
                   node-version: "18"
 
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: "3.10"
+
             - name: Install Dependencies
               run: |
-                  # Install wkhtmltoimage for Python imgkit
+                  # Install wkhtmltoimage for Python
                   sudo apt-get update
-                  sudo apt-get install -y wkhtmltopdf
+                  sudo apt-get install -y wkhtmltopdf xvfb
 
-                  # Install Python package
+                  # Install Python packages
                   pip install imgkit
 
-            - name: Generate Everything
+                  # Install ImageMagick for GIF creation (optional)
+                  sudo apt-get install -y imagemagick
+
+            - name: Generate Stats Data
               env:
                   TOKEN: ${{ secrets.TOKEN }}
                   GITHUB_USERNAME: ${{ github.repository_owner }}
               run: |
-                  mkdir -p data/screenshots
+                  mkdir -p data
                   echo "📊 Fetching GitHub stats..."
                   node scripts/fetch-stats.js
-                  echo "🎨 Generating HTML dashboard..."
-                  node scripts/generate-html.js
-                  echo "📸 Generating screenshots..."
-                  python scripts/generate-screenshot.py
 
-            - name: Check for Changes
-              id: changes
+            - name: Generate HTML Components
               run: |
-                  echo "Checking for changes in data/ directory..."
-                  git add data/
-                  if git diff --cached --quiet; then
-                    echo "has_changes=false" >> $GITHUB_OUTPUT
-                    echo "📭 No changes to commit"
-                  else
-                    echo "has_changes=true" >> $GITHUB_OUTPUT
-                    echo "📬 Changes detected, will commit"
-                  fi
+                  echo "🎨 Generating HTML components..."
+                  node scripts/generate-components.js
 
-            - name: Commit and Push Changes
-              if: steps.changes.outputs.has_changes == 'true'
+            - name: Generate Component Images
+              run: |
+                  echo "📸 Generating images from components..."
+                  python scripts/generate-images.py
+
+            - name: List Generated Files
+              run: |
+                  echo "📁 Data directory contents:"
+                  find data/ -type f -name "*.json" -o -name "*.html" -o -name "*.png" -o -name "*.gif" | sort
+                  echo ""
+                  echo "📸 Generated images:"
+                  ls -lh data/images/ || echo "No images found"
+
+            - name: Commit Updates
               run: |
                   git config user.name "github-actions[bot]"
                   git config user.email "github-actions[bot]@users.noreply.github.com"
-                  git commit -m "🤖 Auto-update GitHub stats - $(date +'%Y-%m-%d %H:%M UTC')"
-                  git push
+                  git add data/
+                  if git diff --cached --quiet; then
+                    echo "No changes to commit"
+                  else
+                    git commit -m "📊 Update component images - $(date +'%Y-%m-%d %H:%M')"
+                    git push
+                  fi
