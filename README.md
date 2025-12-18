@@ -8,4 +8,4 @@
 ![Languages](data/svgs/languages.svg)
 
 ### 🎯 Quick Overview
-![Combined Stats](data/svgs/combined-stats.svg.svg)
+![Combined Stats](data/svgs/combined-stats.svg)
