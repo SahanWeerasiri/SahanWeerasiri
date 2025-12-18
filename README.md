@@ -12,6 +12,7 @@
 
 ![Profile Header](data/images/profile-header.png)
 ![GitHub Stats](data/images/github-stats.gif)
+![Most Used Languages](data/images/languages.png)
 
 
 <h3 align="left">Languages and Tools:</h3>
