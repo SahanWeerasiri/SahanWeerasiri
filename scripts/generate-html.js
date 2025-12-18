@@ -117,7 +117,10 @@ function generateContributionCalendar(weeks) {
 // Generate language bars HTML
 function generateLanguageBars(languages) {
     let barsHTML = '';
-    const topLanguages = Object.entries(languages).slice(0, 8);
+    const topLanguages = Object.entries(languages).slice(0, 5).map(([lang, data]) => ({
+        name: lang,
+        percentage: data.percentage
+    }));
 
     topLanguages.forEach(([language, data]) => {
         const percentage = parseFloat(data.percentage);

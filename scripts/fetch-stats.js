@@ -5,7 +5,7 @@ const path = require('path');
 
 // Configuration
 const TOKEN = process.env.TOKEN || process.env.PERSONAL_TOKEN;
-const USERNAME = process.env.GITHUB_USERNAME || 'sahan-lahiru';
+const USERNAME = process.env.GITHUB_USERNAME || 'SahanWeerasiri';
 const OUTPUT_FILE = path.join(__dirname, '../data/github-stats.json');
 
 if (!TOKEN) {
@@ -32,7 +32,7 @@ async function fetchAPI(url, options = {}) {
     return response.json();
 }
 
-// GraphQL query for contribution data
+// FIXED GraphQL query without totalContributions field
 async function fetchGraphQLStats() {
     const oneYearAgo = new Date();
     oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
@@ -84,14 +84,13 @@ async function fetchGraphQLStats() {
           }
         }
         
-        # Contribution stats for last year
+        # FIXED: Contribution stats for last year (removed totalContributions)
         contributionsCollection(from: $fromDate) {
           totalCommitContributions
           totalPullRequestContributions
           totalPullRequestReviewContributions
           totalIssueContributions
           totalRepositoryContributions
-          totalContributions
           
           # Contribution calendar
           contributionCalendar {
@@ -158,7 +157,6 @@ async function fetchAllRepos() {
 
         repos.push(...pageRepos);
 
-        // Check if we got fewer than requested (end of pages)
         if (pageRepos.length < perPage) break;
 
         page++;
@@ -185,8 +183,8 @@ async function calculateLanguageStats(repos) {
     const languageBytes = {};
     let totalBytes = 0;
 
-    // Process a subset of repos for performance (or all if you want)
-    const reposToProcess = repos.slice(0, 50); // Adjust as needed
+    // Process first 20 repos for performance
+    const reposToProcess = repos.slice(0, 20);
 
     for (const repo of reposToProcess) {
         try {
@@ -227,14 +225,14 @@ async function calculateLanguageStats(repos) {
     };
 }
 
-// Calculate total stars from repositories
-function calculateTotalStars(repos) {
-    return repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-}
-
-// Calculate total forks from repositories
-function calculateTotalForks(repos) {
-    return repos.reduce((sum, repo) => sum + repo.forks_count, 0);
+// Calculate total stats
+function calculateStats(repos) {
+    return {
+        totalStars: repos.reduce((sum, repo) => sum + repo.stargazers_count, 0),
+        totalForks: repos.reduce((sum, repo) => sum + repo.forks_count, 0),
+        publicRepos: repos.filter(r => !r.private).length,
+        privateRepos: repos.filter(r => r.private).length
+    };
 }
 
 // Main function to fetch all data
@@ -243,7 +241,7 @@ async function fetchAllStats() {
     console.log(`👤 Fetching data for: ${USERNAME}`);
 
     try {
-        // Fetch data in parallel where possible
+        // Fetch data in parallel
         const [graphqlData, repos, prIssueCounts] = await Promise.all([
             fetchGraphQLStats(),
             fetchAllRepos(),
@@ -251,18 +249,16 @@ async function fetchAllStats() {
         ]);
 
         console.log(`📊 Found ${repos.length} repositories`);
-        console.log(`⭐ Calculating language stats...`);
 
         const languageStats = await calculateLanguageStats(repos);
-        const totalStars = calculateTotalStars(repos);
-        const totalForks = calculateTotalForks(repos);
+        const repoStats = calculateStats(repos);
 
         // Compile all data
         const allStats = {
             metadata: {
                 fetchedAt: new Date().toISOString(),
                 username: USERNAME,
-                dataVersion: '1.0'
+                dataVersion: '1.1'
             },
             profile: {
                 name: graphqlData.name,
@@ -279,9 +275,10 @@ async function fetchAllStats() {
             stats: {
                 // Repository stats
                 totalRepositories: graphqlData.repositories.totalCount,
-                totalStars: totalStars,
-                totalForks: totalForks,
-                totalDiskUsage: graphqlData.repositories.totalDiskUsage,
+                totalStars: repoStats.totalStars,
+                totalForks: repoStats.totalForks,
+                publicRepos: repoStats.publicRepos,
+                privateRepos: repoStats.privateRepos,
 
                 // Contribution stats (last year)
                 commitsLastYear: graphqlData.contributionsCollection.totalCommitContributions,
@@ -289,7 +286,6 @@ async function fetchAllStats() {
                 prReviewsLastYear: graphqlData.contributionsCollection.totalPullRequestReviewContributions,
                 issuesLastYear: graphqlData.contributionsCollection.totalIssueContributions,
                 contributedToLastYear: graphqlData.contributionsCollection.totalRepositoryContributions,
-                totalContributionsLastYear: graphqlData.contributionsCollection.totalContributions,
 
                 // All-time counts
                 totalPRsCreated: prIssueCounts.totalPRs,
@@ -303,10 +299,8 @@ async function fetchAllStats() {
             languages: languageStats.languages,
             repositories: {
                 count: repos.length,
-                publicCount: repos.filter(r => !r.private).length,
-                privateCount: repos.filter(r => r.private).length,
-                lastUpdated: repos[0]?.updatedAt, // Most recently updated
-                sample: repos.slice(0, 10).map(repo => ({
+                lastUpdated: repos[0]?.updatedAt,
+                sample: repos.slice(0, 6).map(repo => ({
                     name: repo.name,
                     description: repo.description,
                     stars: repo.stargazers_count,
@@ -358,20 +352,6 @@ async function fetchAllStats() {
         // Write to file
         fs.writeFileSync(OUTPUT_FILE, JSON.stringify(stats, null, 2));
         console.log(`💾 Data saved to: ${OUTPUT_FILE}`);
-
-        // Also output a summary to console for GitHub Actions
-        console.log('\n📊 STATS SUMMARY:');
-        console.log(JSON.stringify({
-            stars: stats.stats.totalStars,
-            commits_last_year: stats.stats.commitsLastYear,
-            prs: stats.stats.totalPRsCreated,
-            issues: stats.stats.totalIssuesCreated,
-            contributed_to: stats.stats.contributedToLastYear,
-            top_languages: Object.entries(stats.languages)
-                .slice(0, 5)
-                .map(([lang, data]) => `${lang}: ${data.percentage}%`)
-                .join(', ')
-        }, null, 2));
 
     } catch (error) {
         console.error('Failed to fetch GitHub stats:', error);
