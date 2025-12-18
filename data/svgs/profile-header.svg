@@ -1,49 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="800" height="280" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="800" height="180" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
             <stop offset="100%" style="stop-color:#a371f7;stop-opacity:1" />
         </linearGradient>
-        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
-            <feOffset dx="0" dy="4" result="offsetblur"/>
-            <feMerge>
-                <feMergeNode/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
+        <radialGradient id="avatarGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#a371f7;stop-opacity:0.7"/>
+        </radialGradient>
     </defs>
     
-    <!-- Background with animation -->
-    <rect width="800" height="280" fill="#0d1117" rx="20" ry="20">
-        <animate attributeName="rx" values="20;25;20" dur="10s" repeatCount="indefinite"/>
-        <animate attributeName="ry" values="20;25;20" dur="10s" repeatCount="indefinite"/>
-    </rect>
+    <!-- Background -->
+    <rect width="800" height="180" fill="#0d1117" rx="20" ry="20"/>
     
     <!-- Animated border -->
-    <rect width="796" height="276" x="2" y="2" rx="18" ry="18" fill="none" stroke="url(#gradient)" stroke-width="2" opacity="0.7">
+    <rect width="796" height="176" x="2" y="2" rx="18" ry="18" fill="none" stroke="url(#gradient)" stroke-width="2" opacity="0.7">
         <animate attributeName="stroke-dasharray" values="0,800;800,0;0,800" dur="15s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite"/>
     </rect>
     
-    <!-- Avatar with pulse animation -->
-    <circle cx="100" cy="140" r="65" fill="url(#gradient)">
+    <!-- Avatar circle with animation -->
+    <circle cx="100" cy="100" r="65" fill="url(#avatarGradient)">
         <animate attributeName="r" values="65;68;65" dur="3s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="100" cy="140" r="60" fill="#0d1117"/>
-    <image href="https://avatars.githubusercontent.com/u/131955636?u=0c30ffa00ade815ecbe2335517b6ce0b1f866e60&v=4" x="40" y="80" width="120" height="120" preserveAspectRatio="xMidYMid slice">
-        <animate attributeName="opacity" values="1;0.9;1" dur="4s" repeatCount="indefinite"/>
-    </image>
+    
+    <!-- Avatar initials -->
+    <text x="100" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff">
+        SL
+        <animate attributeName="font-size" values="36;38;36" dur="4s" repeatCount="indefinite"/>
+    </text>
     
     <!-- Profile Info -->
-    <g filter="url(#shadow)">
-        <text x="200" y="80" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="url(#gradient)">
-            Sahan Lahiru
-        </text>
-    </g>
+    <text x="200" y="60" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="url(#gradient)">
+        Sahan Lahiru
+    </text>
     
-    <text x="200" y="110" font-family="'Courier New', monospace" font-size="18" fill="#8b949e">
+    <text x="200" y="90" font-family="'Courier New', monospace" font-size="18" fill="#8b949e">
         @SahanWeerasiri
     </text>
     
@@ -52,8 +45,8 @@
     
     
     
-    <!-- Join Date with fade animation -->
-    <text x="200" y="165" font-family="Arial, sans-serif" font-size="12" fill="#8b949e" opacity="0.8">
+    <!-- Join Date -->
+    <text x="200" y="150" font-family="Arial, sans-serif" font-size="12" fill="#8b949e" opacity="0.8">
         <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
         Joined GitHub • April 2023
     </text>
@@ -66,7 +59,7 @@
     <circle cx="750" cy="100" r="3" fill="#a371f7" opacity="0.5">
         <animate attributeName="cx" values="750;730;750" dur="8s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="700" cy="250" r="2" fill="#58a6ff" opacity="0.4">
-        <animate attributeName="cy" values="250;230;250" dur="6s" repeatCount="indefinite"/>
+    <circle cx="700" cy="150" r="2" fill="#58a6ff" opacity="0.4">
+        <animate attributeName="cy" values="150;130;150" dur="6s" repeatCount="indefinite"/>
     </circle>
 </svg>

@@ -3,266 +3,177 @@
     <defs>
         <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
-            <stop offset="50%" style="stop-color:#a371f7;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#58a6ff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#a371f7;stop-opacity:1" />
         </linearGradient>
-        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
-            <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
     </defs>
     
-    <!-- Animated background -->
-    <rect width="800" height="400" fill="#0d1117" rx="20" ry="20">
-        <animate attributeName="fill" values="#0d1117;#161b22;#0d1117" dur="20s" repeatCount="indefinite"/>
-    </rect>
+    <!-- Background -->
+    <rect width="800" height="400" fill="#0d1117" rx="20" ry="20"/>
     
-    <!-- Title with moving gradient -->
-    <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" filter="url(#glow)">
-        <tspan fill="url(#titleGradient)">
-            <animate attributeName="x" values="400;410;400" dur="10s" repeatCount="indefinite"/>
-            📊 GitHub Statistics
-        </tspan>
+    <!-- Title -->
+    <text x="400" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="url(#titleGradient)">
+        📊 GitHub Statistics
     </text>
-    
-    <!-- Moving gradient in title -->
-    <animate xlink:href="#titleGradient" attributeName="x1" values="0%;100%;0%" dur="15s" repeatCount="indefinite"/>
-    <animate xlink:href="#titleGradient" attributeName="x2" values="100%;0%;100%" dur="15s" repeatCount="indefinite"/>
     
     <!-- Stats Grid -->
     
-        <g transform="translate(0, 80)">
-            <!-- Card background with hover effect -->
-            <rect width="180" height="100" rx="15" ry="15" fill="#21262d" stroke="#f1e05a" stroke-width="2">
+        <g transform="translate(50, 80)">
+            <!-- Card background -->
+            <rect width="170" height="100" rx="15" ry="15" fill="#21262d" stroke="#f1e05a" stroke-width="2">
                 <animate attributeName="stroke-width" values="2;3;2" dur="2s" begin="0s" repeatCount="indefinite"/>
-                <animate attributeName="fill" values="#21262d;#30363d;#21262d" dur="4s" begin="0s" repeatCount="indefinite"/>
             </rect>
             
-            <!-- Icon with bounce animation -->
-            <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#f1e05a">
-                <animate attributeName="y" values="40;35;40" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+            <!-- Icon -->
+            <text x="85" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#f1e05a">
                 ⭐
             </text>
             
-            <!-- Value with counting animation -->
-            <text x="90" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
+            <!-- Value -->
+            <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
                 37
-                <animate attributeName="opacity" values="1;0.8;1" dur="2s" begin="0s" repeatCount="indefinite"/>
             </text>
             
-            <!-- Label with subtle animation -->
-            <text x="90" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+            <!-- Label -->
+            <text x="85" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
                 Total Stars
-                <animate attributeName="fill" values="#8b949e;#c9d1d9;#8b949e" dur="3s" begin="0s" repeatCount="indefinite"/>
             </text>
         </g>
         
-        <g transform="translate(200, 80)">
-            <!-- Card background with hover effect -->
-            <rect width="180" height="100" rx="15" ry="15" fill="#21262d" stroke="#58a6ff" stroke-width="2">
+        <g transform="translate(240, 80)">
+            <!-- Card background -->
+            <rect width="170" height="100" rx="15" ry="15" fill="#21262d" stroke="#58a6ff" stroke-width="2">
                 <animate attributeName="stroke-width" values="2;3;2" dur="2s" begin="0.5s" repeatCount="indefinite"/>
-                <animate attributeName="fill" values="#21262d;#30363d;#21262d" dur="4s" begin="0.3s" repeatCount="indefinite"/>
             </rect>
             
-            <!-- Icon with bounce animation -->
-            <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#58a6ff">
-                <animate attributeName="y" values="40;35;40" dur="1.5s" begin="0.4s" repeatCount="indefinite"/>
+            <!-- Icon -->
+            <text x="85" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#58a6ff">
                 📝
             </text>
             
-            <!-- Value with counting animation -->
-            <text x="90" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
+            <!-- Value -->
+            <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
                 2,444
-                <animate attributeName="opacity" values="1;0.8;1" dur="2s" begin="0.2s" repeatCount="indefinite"/>
             </text>
             
-            <!-- Label with subtle animation -->
-            <text x="90" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+            <!-- Label -->
+            <text x="85" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
                 Commits
-                <animate attributeName="fill" values="#8b949e;#c9d1d9;#8b949e" dur="3s" begin="0.6s" repeatCount="indefinite"/>
             </text>
         </g>
         
-        <g transform="translate(400, 80)">
-            <!-- Card background with hover effect -->
-            <rect width="180" height="100" rx="15" ry="15" fill="#21262d" stroke="#238636" stroke-width="2">
+        <g transform="translate(430, 80)">
+            <!-- Card background -->
+            <rect width="170" height="100" rx="15" ry="15" fill="#21262d" stroke="#238636" stroke-width="2">
                 <animate attributeName="stroke-width" values="2;3;2" dur="2s" begin="1s" repeatCount="indefinite"/>
-                <animate attributeName="fill" values="#21262d;#30363d;#21262d" dur="4s" begin="0.6s" repeatCount="indefinite"/>
             </rect>
             
-            <!-- Icon with bounce animation -->
-            <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#238636">
-                <animate attributeName="y" values="40;35;40" dur="1.5s" begin="0.8s" repeatCount="indefinite"/>
+            <!-- Icon -->
+            <text x="85" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#238636">
                 🔀
             </text>
             
-            <!-- Value with counting animation -->
-            <text x="90" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
+            <!-- Value -->
+            <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
                 225
-                <animate attributeName="opacity" values="1;0.8;1" dur="2s" begin="0.4s" repeatCount="indefinite"/>
             </text>
             
-            <!-- Label with subtle animation -->
-            <text x="90" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+            <!-- Label -->
+            <text x="85" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
                 Pull Requests
-                <animate attributeName="fill" values="#8b949e;#c9d1d9;#8b949e" dur="3s" begin="1.2s" repeatCount="indefinite"/>
             </text>
         </g>
         
-        <g transform="translate(600, 80)">
-            <!-- Card background with hover effect -->
-            <rect width="180" height="100" rx="15" ry="15" fill="#21262d" stroke="#f85149" stroke-width="2">
+        <g transform="translate(620, 80)">
+            <!-- Card background -->
+            <rect width="170" height="100" rx="15" ry="15" fill="#21262d" stroke="#f85149" stroke-width="2">
                 <animate attributeName="stroke-width" values="2;3;2" dur="2s" begin="1.5s" repeatCount="indefinite"/>
-                <animate attributeName="fill" values="#21262d;#30363d;#21262d" dur="4s" begin="0.8999999999999999s" repeatCount="indefinite"/>
             </rect>
             
-            <!-- Icon with bounce animation -->
-            <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#f85149">
-                <animate attributeName="y" values="40;35;40" dur="1.5s" begin="1.2000000000000002s" repeatCount="indefinite"/>
+            <!-- Icon -->
+            <text x="85" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#f85149">
                 🐛
             </text>
             
-            <!-- Value with counting animation -->
-            <text x="90" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
+            <!-- Value -->
+            <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
                 117
-                <animate attributeName="opacity" values="1;0.8;1" dur="2s" begin="0.6000000000000001s" repeatCount="indefinite"/>
             </text>
             
-            <!-- Label with subtle animation -->
-            <text x="90" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+            <!-- Label -->
+            <text x="85" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
                 Issues Created
-                <animate attributeName="fill" values="#8b949e;#c9d1d9;#8b949e" dur="3s" begin="1.7999999999999998s" repeatCount="indefinite"/>
             </text>
         </g>
         
-        <g transform="translate(0, 200)">
-            <!-- Card background with hover effect -->
-            <rect width="180" height="100" rx="15" ry="15" fill="#21262d" stroke="#a371f7" stroke-width="2">
+        <g transform="translate(50, 200)">
+            <!-- Card background -->
+            <rect width="170" height="100" rx="15" ry="15" fill="#21262d" stroke="#a371f7" stroke-width="2">
                 <animate attributeName="stroke-width" values="2;3;2" dur="2s" begin="2s" repeatCount="indefinite"/>
-                <animate attributeName="fill" values="#21262d;#30363d;#21262d" dur="4s" begin="1.2s" repeatCount="indefinite"/>
             </rect>
             
-            <!-- Icon with bounce animation -->
-            <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#a371f7">
-                <animate attributeName="y" values="40;35;40" dur="1.5s" begin="1.6s" repeatCount="indefinite"/>
+            <!-- Icon -->
+            <text x="85" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#a371f7">
                 🤝
             </text>
             
-            <!-- Value with counting animation -->
-            <text x="90" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
+            <!-- Value -->
+            <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
                 75
-                <animate attributeName="opacity" values="1;0.8;1" dur="2s" begin="0.8s" repeatCount="indefinite"/>
             </text>
             
-            <!-- Label with subtle animation -->
-            <text x="90" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+            <!-- Label -->
+            <text x="85" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
                 Repos Contributed
-                <animate attributeName="fill" values="#8b949e;#c9d1d9;#8b949e" dur="3s" begin="2.4s" repeatCount="indefinite"/>
             </text>
         </g>
         
-        <g transform="translate(200, 200)">
-            <!-- Card background with hover effect -->
-            <rect width="180" height="100" rx="15" ry="15" fill="#21262d" stroke="#db61a2" stroke-width="2">
+        <g transform="translate(240, 200)">
+            <!-- Card background -->
+            <rect width="170" height="100" rx="15" ry="15" fill="#21262d" stroke="#db61a2" stroke-width="2">
                 <animate attributeName="stroke-width" values="2;3;2" dur="2s" begin="2.5s" repeatCount="indefinite"/>
-                <animate attributeName="fill" values="#21262d;#30363d;#21262d" dur="4s" begin="1.5s" repeatCount="indefinite"/>
             </rect>
             
-            <!-- Icon with bounce animation -->
-            <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#db61a2">
-                <animate attributeName="y" values="40;35;40" dur="1.5s" begin="2s" repeatCount="indefinite"/>
+            <!-- Icon -->
+            <text x="85" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#db61a2">
                 👥
             </text>
             
-            <!-- Value with counting animation -->
-            <text x="90" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
+            <!-- Value -->
+            <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
                 9
-                <animate attributeName="opacity" values="1;0.8;1" dur="2s" begin="1s" repeatCount="indefinite"/>
             </text>
             
-            <!-- Label with subtle animation -->
-            <text x="90" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+            <!-- Label -->
+            <text x="85" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
                 Followers
-                <animate attributeName="fill" values="#8b949e;#c9d1d9;#8b949e" dur="3s" begin="3s" repeatCount="indefinite"/>
             </text>
         </g>
         
-        <g transform="translate(400, 200)">
-            <!-- Card background with hover effect -->
-            <rect width="180" height="100" rx="15" ry="15" fill="#21262d" stroke="#8b949e" stroke-width="2">
+        <g transform="translate(430, 200)">
+            <!-- Card background -->
+            <rect width="170" height="100" rx="15" ry="15" fill="#21262d" stroke="#8b949e" stroke-width="2">
                 <animate attributeName="stroke-width" values="2;3;2" dur="2s" begin="3s" repeatCount="indefinite"/>
-                <animate attributeName="fill" values="#21262d;#30363d;#21262d" dur="4s" begin="1.7999999999999998s" repeatCount="indefinite"/>
             </rect>
             
-            <!-- Icon with bounce animation -->
-            <text x="90" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#8b949e">
-                <animate attributeName="y" values="40;35;40" dur="1.5s" begin="2.4000000000000004s" repeatCount="indefinite"/>
+            <!-- Icon -->
+            <text x="85" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#8b949e">
                 📂
             </text>
             
-            <!-- Value with counting animation -->
-            <text x="90" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
+            <!-- Value -->
+            <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
                 102
-                <animate attributeName="opacity" values="1;0.8;1" dur="2s" begin="1.2000000000000002s" repeatCount="indefinite"/>
             </text>
             
-            <!-- Label with subtle animation -->
-            <text x="90" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+            <!-- Label -->
+            <text x="85" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
                 Public Repos
-                <animate attributeName="fill" values="#8b949e;#c9d1d9;#8b949e" dur="3s" begin="3.5999999999999996s" repeatCount="indefinite"/>
             </text>
         </g>
         
     
     <!-- Animated border -->
-    <rect width="796" height="396" x="2" y="2" rx="18" ry="18" fill="none" stroke="url(#titleGradient)" stroke-width="2" opacity="0.8">
+    <rect width="796" height="396" x="2" y="2" rx="18" ry="18" fill="none" stroke="url(#titleGradient)" stroke-width="2">
         <animate attributeName="stroke-dasharray" values="0,800;800,0;0,800" dur="12s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
     </rect>
-    
-    <!-- Floating particles -->
-    
-        <circle cx="165.0015496726232" cy="319.1711590631061" r="2.133830678922418" fill="#58a6ff" opacity="0.3">
-            <animate attributeName="cy" values="319.1711590631061;269.1711590631061;319.1711590631061" dur="6.241618247160581s" begin="1.224607783770627s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="6.241618247160581s" begin="1.224607783770627s" repeatCount="indefinite"/>
-        </circle>
-        
-        <circle cx="312.3137221543311" cy="191.0246051849864" r="1.7785394814455082" fill="#58a6ff" opacity="0.3">
-            <animate attributeName="cy" values="191.0246051849864;141.0246051849864;191.0246051849864" dur="10.413880945399603s" begin="2.5322689952665933s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="10.413880945399603s" begin="2.5322689952665933s" repeatCount="indefinite"/>
-        </circle>
-        
-        <circle cx="72.30985912253071" cy="376.32900183822676" r="1.1314225456914682" fill="#58a6ff" opacity="0.3">
-            <animate attributeName="cy" values="376.32900183822676;326.32900183822676;376.32900183822676" dur="13.071201006277189s" begin="2.9155377456647003s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="13.071201006277189s" begin="2.9155377456647003s" repeatCount="indefinite"/>
-        </circle>
-        
-        <circle cx="216.86936531349033" cy="255.02729680667193" r="1.6216139982307838" fill="#58a6ff" opacity="0.3">
-            <animate attributeName="cy" values="255.02729680667193;205.02729680667193;255.02729680667193" dur="7.2701095244111125s" begin="1.7399573304038563s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="7.2701095244111125s" begin="1.7399573304038563s" repeatCount="indefinite"/>
-        </circle>
-        
-        <circle cx="380.4267176243224" cy="364.73894947958763" r="1.4784663600977281" fill="#58a6ff" opacity="0.3">
-            <animate attributeName="cy" values="364.73894947958763;314.73894947958763;364.73894947958763" dur="8.468413140661937s" begin="4.382199224474724s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="8.468413140661937s" begin="4.382199224474724s" repeatCount="indefinite"/>
-        </circle>
-        
-        <circle cx="537.3656331372888" cy="73.39269054882664" r="2.9701741381804507" fill="#58a6ff" opacity="0.3">
-            <animate attributeName="cy" values="73.39269054882664;23.392690548826636;73.39269054882664" dur="5.7862242349683s" begin="1.401345937429005s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="5.7862242349683s" begin="1.401345937429005s" repeatCount="indefinite"/>
-        </circle>
-        
-        <circle cx="147.34671311925757" cy="302.91854690671903" r="1.2191954400098064" fill="#58a6ff" opacity="0.3">
-            <animate attributeName="cy" values="302.91854690671903;252.91854690671903;302.91854690671903" dur="12.2918097027849s" begin="1.710493675035183s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="12.2918097027849s" begin="1.710493675035183s" repeatCount="indefinite"/>
-        </circle>
-        
-        <circle cx="483.56483402522093" cy="184.32836769172178" r="1.8804797209292485" fill="#58a6ff" opacity="0.3">
-            <animate attributeName="cy" values="184.32836769172178;134.32836769172178;184.32836769172178" dur="9.31797453132553s" begin="3.924087744871916s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.1;0.4;0.1" dur="9.31797453132553s" begin="3.924087744871916s" repeatCount="indefinite"/>
-        </circle>
-        
 </svg>
