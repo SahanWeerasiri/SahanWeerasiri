@@ -45,7 +45,7 @@ jobs:
             # 5. Fetch stats (reads from existing scripts/fetch-stats.js)
             - name: Fetch GitHub Stats
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.TOKEN }}
                   GITHUB_USERNAME: ${{ github.repository_owner }}
               run: node scripts/fetch-stats.js
 
