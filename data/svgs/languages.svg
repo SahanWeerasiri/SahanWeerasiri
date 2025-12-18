@@ -1,92 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="700" height="400" xmlns="http://www.w3.org/2000/svg">
+<svg width="700" height="500" xmlns="http://www.w3.org/2000/svg">
     <defs>
         <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
             <stop offset="100%" style="stop-color:#a371f7;stop-opacity:1" />
         </linearGradient>
+        <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#161b22;stop-opacity:1"/>
+        </radialGradient>
     </defs>
     
-    <!-- Background -->
-    <rect width="700" height="400" fill="#21262d" rx="20" ry="20" stroke="#30363d" stroke-width="2"/>
+    <!-- Background with subtle pulse -->
+    <rect width="700" height="500" fill="url(#bgGradient)" rx="20" ry="20">
+        <animate attributeName="rx" values="20;22;20" dur="8s" repeatCount="indefinite"/>
+        <animate attributeName="ry" values="20;22;20" dur="8s" repeatCount="indefinite"/>
+    </rect>
     
-    <!-- Title -->
-    <text x="350" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="url(#titleGradient)">
+    <!-- Border -->
+    <rect width="696" height="496" x="2" y="2" rx="18" ry="18" fill="none" stroke="url(#titleGradient)" stroke-width="2" opacity="0.6">
+        <animate attributeName="stroke-dasharray" values="0,700;700,0;0,700" dur="10s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Animated title -->
+    <text x="350" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="url(#titleGradient)">
+        <animate attributeName="font-size" values="28;30;28" dur="3s" repeatCount="indefinite"/>
         💻 Most Used Languages
     </text>
     
-    <!-- Languages -->
+    <text x="350" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
+        Based on code usage across repositories
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+    </text>
     
-        <g transform="translate(100, 80)">
-            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+    <!-- Moving gradient -->
+    <animate xlink:href="#titleGradient" attributeName="x1" values="0%;100%;0%" dur="10s" repeatCount="indefinite"/>
+    <animate xlink:href="#titleGradient" attributeName="x2" values="100%;0%;100%" dur="10s" repeatCount="indefinite"/>
+    
+    <!-- Languages with sequential animation -->
+    
+        <g transform="translate(100, 100)">
+            <!-- Language name with slide-in animation -->
+            <text x="0" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f0f6fc" opacity="0">
+                <animate attributeName="x" values="-100;0" dur="0.8s" begin="0s" fill="freeze"/>
+                <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0s" fill="freeze"/>
                 Python
             </text>
-            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+            
+            <!-- Percentage with fade-in animation -->
+            <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="1s" begin="0s" fill="freeze"/>
                 17.57%
             </text>
-            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
-            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#3572A5">
-                <animate attributeName="width" from="0" to="500" dur="1s" fill="freeze" begin="0s"/>
+            
+            <!-- Background bar -->
+            <rect x="0" y="30" width="500" height="25" rx="12.5" ry="12.5" fill="#161b22">
+                <animate attributeName="width" values="0;500" dur="0.5s" begin="0s" fill="freeze"/>
             </rect>
+            
+            <!-- Animated progress bar -->
+            <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#3572A5">
+                <animate attributeName="width" values="0;500" dur="1.5s" begin="0s" fill="freeze"/>
+                <animate attributeName="fill" values="#3572A5;#3572A588;#3572A5" dur="3s" begin="0s" repeatCount="indefinite"/>
+            </rect>
+            
+            <!-- Bar percentage text -->
+            <text x="490" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0s" fill="freeze"/>
+                17.57%
+            </text>
         </g>
         
-        <g transform="translate(100, 140)">
-            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+        <g transform="translate(100, 170)">
+            <!-- Language name with slide-in animation -->
+            <text x="0" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f0f6fc" opacity="0">
+                <animate attributeName="x" values="-100;0" dur="0.8s" begin="0.3s" fill="freeze"/>
+                <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0.3s" fill="freeze"/>
                 Java
             </text>
-            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+            
+            <!-- Percentage with fade-in animation -->
+            <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="1s" begin="0.5s" fill="freeze"/>
                 15.28%
             </text>
-            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
-            <rect x="0" y="25" width="434.8321001707456" height="20" rx="10" ry="10" fill="#b07219">
-                <animate attributeName="width" from="0" to="434.8321001707456" dur="1s" fill="freeze" begin="0.2s"/>
+            
+            <!-- Background bar -->
+            <rect x="0" y="30" width="500" height="25" rx="12.5" ry="12.5" fill="#161b22">
+                <animate attributeName="width" values="0;500" dur="0.5s" begin="0.2s" fill="freeze"/>
             </rect>
+            
+            <!-- Animated progress bar -->
+            <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#b07219">
+                <animate attributeName="width" values="0;434.8321001707456" dur="1.5s" begin="0.5s" fill="freeze"/>
+                <animate attributeName="fill" values="#b07219;#b0721988;#b07219" dur="3s" begin="2s" repeatCount="indefinite"/>
+            </rect>
+            
+            <!-- Bar percentage text -->
+            <text x="424.8321001707456" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.8s" fill="freeze"/>
+                15.28%
+            </text>
         </g>
         
-        <g transform="translate(100, 200)">
-            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+        <g transform="translate(100, 240)">
+            <!-- Language name with slide-in animation -->
+            <text x="0" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f0f6fc" opacity="0">
+                <animate attributeName="x" values="-100;0" dur="0.8s" begin="0.6s" fill="freeze"/>
+                <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0.6s" fill="freeze"/>
                 Tcl
             </text>
-            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+            
+            <!-- Percentage with fade-in animation -->
+            <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="1s" begin="1s" fill="freeze"/>
                 10.97%
             </text>
-            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
-            <rect x="0" y="25" width="312.1798520204895" height="20" rx="10" ry="10" fill="#6e7681">
-                <animate attributeName="width" from="0" to="312.1798520204895" dur="1s" fill="freeze" begin="0.4s"/>
+            
+            <!-- Background bar -->
+            <rect x="0" y="30" width="500" height="25" rx="12.5" ry="12.5" fill="#161b22">
+                <animate attributeName="width" values="0;500" dur="0.5s" begin="0.4s" fill="freeze"/>
             </rect>
+            
+            <!-- Animated progress bar -->
+            <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#6e7681">
+                <animate attributeName="width" values="0;312.1798520204895" dur="1.5s" begin="1s" fill="freeze"/>
+                <animate attributeName="fill" values="#6e7681;#6e768188;#6e7681" dur="3s" begin="4s" repeatCount="indefinite"/>
+            </rect>
+            
+            <!-- Bar percentage text -->
+            <text x="302.1798520204895" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="3.6s" fill="freeze"/>
+                10.97%
+            </text>
         </g>
         
-        <g transform="translate(100, 260)">
-            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+        <g transform="translate(100, 310)">
+            <!-- Language name with slide-in animation -->
+            <text x="0" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f0f6fc" opacity="0">
+                <animate attributeName="x" values="-100;0" dur="0.8s" begin="0.8999999999999999s" fill="freeze"/>
+                <animate attributeName="opacity" values="0;1" dur="0.8s" begin="0.8999999999999999s" fill="freeze"/>
                 C++
             </text>
-            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+            
+            <!-- Percentage with fade-in animation -->
+            <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="1s" begin="1.5s" fill="freeze"/>
                 8.35%
             </text>
-            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
-            <rect x="0" y="25" width="237.6209447922595" height="20" rx="10" ry="10" fill="#f34b7d">
-                <animate attributeName="width" from="0" to="237.6209447922595" dur="1s" fill="freeze" begin="0.6000000000000001s"/>
+            
+            <!-- Background bar -->
+            <rect x="0" y="30" width="500" height="25" rx="12.5" ry="12.5" fill="#161b22">
+                <animate attributeName="width" values="0;500" dur="0.5s" begin="0.6000000000000001s" fill="freeze"/>
             </rect>
+            
+            <!-- Animated progress bar -->
+            <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#f34b7d">
+                <animate attributeName="width" values="0;237.6209447922595" dur="1.5s" begin="1.5s" fill="freeze"/>
+                <animate attributeName="fill" values="#f34b7d;#f34b7d88;#f34b7d" dur="3s" begin="6s" repeatCount="indefinite"/>
+            </rect>
+            
+            <!-- Bar percentage text -->
+            <text x="227.6209447922595" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="5.4s" fill="freeze"/>
+                8.35%
+            </text>
         </g>
         
-        <g transform="translate(100, 320)">
-            <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f0f6fc">
+        <g transform="translate(100, 380)">
+            <!-- Language name with slide-in animation -->
+            <text x="0" y="20" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f0f6fc" opacity="0">
+                <animate attributeName="x" values="-100;0" dur="0.8s" begin="1.2s" fill="freeze"/>
+                <animate attributeName="opacity" values="0;1" dur="0.8s" begin="1.2s" fill="freeze"/>
                 C
             </text>
-            <text x="650" y="15" text-anchor="end" font-family="'Courier New', monospace" font-size="14" fill="#8b949e">
+            
+            <!-- Percentage with fade-in animation -->
+            <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="1s" begin="2s" fill="freeze"/>
                 7.88%
             </text>
-            <rect x="0" y="25" width="500" height="20" rx="10" ry="10" fill="#161b22"/>
-            <rect x="0" y="25" width="224.24587364826408" height="20" rx="10" ry="10" fill="#6e7681">
-                <animate attributeName="width" from="0" to="224.24587364826408" dur="1s" fill="freeze" begin="0.8s"/>
+            
+            <!-- Background bar -->
+            <rect x="0" y="30" width="500" height="25" rx="12.5" ry="12.5" fill="#161b22">
+                <animate attributeName="width" values="0;500" dur="0.5s" begin="0.8s" fill="freeze"/>
             </rect>
+            
+            <!-- Animated progress bar -->
+            <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#6e7681">
+                <animate attributeName="width" values="0;224.24587364826408" dur="1.5s" begin="2s" fill="freeze"/>
+                <animate attributeName="fill" values="#6e7681;#6e768188;#6e7681" dur="3s" begin="8s" repeatCount="indefinite"/>
+            </rect>
+            
+            <!-- Bar percentage text -->
+            <text x="214.24587364826408" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+                <animate attributeName="opacity" values="0;1" dur="0.5s" begin="7.2s" fill="freeze"/>
+                7.88%
+            </text>
         </g>
         
     
     <!-- Legend -->
-    <g transform="translate(100, 420)">
-        <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" fill="#8b949e">
-            * Based on code usage across public repositories
+    <g transform="translate(100, 480)">
+        <text x="0" y="20" font-family="Arial, sans-serif" font-size="12" fill="#8b949e" opacity="0">
+            <animate attributeName="opacity" values="0;1" dur="2s" begin="3s" fill="freeze"/>
+            * Updates daily via GitHub Actions
         </text>
     </g>
+    
+    <!-- Floating code brackets -->
+    <text x="50" y="150" font-family="Arial, sans-serif" font-size="20" fill="#58a6ff" opacity="0.3">
+        <animate attributeName="y" values="150;140;150" dur="5s" repeatCount="indefinite"/>
+        &lt;/&gt;
+    </text>
+    <text x="650" y="250" font-family="Arial, sans-serif" font-size="20" fill="#a371f7" opacity="0.3">
+        <animate attributeName="y" values="250;240;250" dur="6s" repeatCount="indefinite"/>
+        { }
+    </text>
 </svg>
