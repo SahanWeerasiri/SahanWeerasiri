@@ -21,4 +21,7 @@
 ![Languages](data/svgs/languages.svg)
 
 ### 🎯 Quick Overview
-![Combined Stats](data/svgs/combined-stats.svg)
+![Combined Stats](data/svgs/readme-combined.svg)
+
+---
+*SVGs update automatically every 24 hours via GitHub Actions*
