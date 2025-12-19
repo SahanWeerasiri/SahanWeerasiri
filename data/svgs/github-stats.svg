@@ -52,7 +52,7 @@
             
             <!-- Value -->
             <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
-                2,444
+                2,446
             </text>
             
             <!-- Label -->
@@ -74,7 +74,7 @@
             
             <!-- Value -->
             <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
-                225
+                229
             </text>
             
             <!-- Label -->
@@ -96,7 +96,7 @@
             
             <!-- Value -->
             <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
-                117
+                123
             </text>
             
             <!-- Label -->
@@ -162,7 +162,7 @@
             
             <!-- Value -->
             <text x="85" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#f0f6fc">
-                102
+                103
             </text>
             
             <!-- Label -->
