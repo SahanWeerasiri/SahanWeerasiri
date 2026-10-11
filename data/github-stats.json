@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "fetchedAt": "2026-10-10T05:28:16.983Z",
+    "fetchedAt": "2026-10-11T05:22:44.358Z",
     "username": "SahanWeerasiri"
   },
   "profile": {
@@ -13,36 +13,36 @@
   },
   "stats": {
     "totalStars": 37,
-    "totalRepositories": 116,
-    "commitsLastYear": 268,
+    "totalRepositories": 117,
+    "commitsLastYear": 270,
     "prsLastYear": 62,
-    "contributedToLastYear": 16,
+    "contributedToLastYear": 17,
     "totalPRsCreated": 282,
     "totalIssuesCreated": 248,
-    "followers": 11
+    "followers": 12
   },
   "languages": {
-    "Python": "17.69",
-    "Dockerfile": "0.03",
-    "Java": "15.38",
-    "Batchfile": "1.74",
-    "C++": "8.41",
-    "CMake": "6.16",
-    "Dart": "2.29",
-    "Kotlin": "3.16",
-    "Swift": "0.65",
-    "C": "7.94",
-    "HTML": "3.69",
+    "Python": "24.04",
+    "Dockerfile": "0.02",
+    "Java": "14.16",
+    "Shell": "2.36",
+    "Batchfile": "1.60",
+    "C++": "7.74",
+    "CMake": "5.67",
+    "Dart": "2.11",
+    "Kotlin": "2.91",
+    "Swift": "0.60",
+    "C": "7.30",
+    "HTML": "3.39",
     "Objective-C": "0.01",
-    "JavaScript": "7.26",
-    "TypeScript": "0.97",
-    "CSS": "0.04",
-    "Tcl": "11.05",
-    "VHDL": "7.17",
-    "Shell": "2.33",
-    "Pascal": "0.18",
-    "Verilog": "0.06",
+    "JavaScript": "6.68",
+    "TypeScript": "0.90",
+    "CSS": "0.03",
+    "Tcl": "10.17",
+    "VHDL": "6.60",
+    "Pascal": "0.16",
+    "Verilog": "0.05",
     "PureBasic": "0.01",
-    "Jupyter Notebook": "3.78"
+    "Jupyter Notebook": "3.48"
   }
 }
