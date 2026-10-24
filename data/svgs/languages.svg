@@ -33,7 +33,7 @@
             
             <!-- Percentage -->
             <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e">
-                24.04%
+                27.06%
             </text>
             
             <!-- Background bar -->
@@ -60,7 +60,7 @@
             <text x="490" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
                 <animate attributeName="opacity" values="0;1" dur="0.5s" begin="fill0.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0" dur="0.5s" begin="fade0.begin" fill="freeze"/>
-                24.04%
+                27.06%
             </text>
         </g>
         
@@ -72,7 +72,7 @@
             
             <!-- Percentage -->
             <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e">
-                14.16%
+                13.48%
             </text>
             
             <!-- Background bar -->
@@ -81,25 +81,25 @@
             <!-- Animated progress bar with fill → fade → refill cycle -->
             <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#b07219">
                 <!-- First fill animation -->
-                <animate id="fill1" attributeName="width" values="0;294.5091514143095" dur="1s" begin="0s;refill1.end" fill="freeze"/>
+                <animate id="fill1" attributeName="width" values="0;249.07612712490763" dur="1s" begin="0s;refill1.end" fill="freeze"/>
                 
                 <!-- Wait for 2 seconds -->
-                <animate id="wait1" attributeName="width" values="294.5091514143095;294.5091514143095" dur="2s" begin="fill1.end" fill="freeze"/>
+                <animate id="wait1" attributeName="width" values="249.07612712490763;249.07612712490763" dur="2s" begin="fill1.end" fill="freeze"/>
                 
                 <!-- Fade out -->
-                <animate id="fade1" attributeName="width" values="294.5091514143095;294.5091514143095" dur="1s" begin="wait1.end" fill="freeze"/>
+                <animate id="fade1" attributeName="width" values="249.07612712490763;249.07612712490763" dur="1s" begin="wait1.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0.2" dur="1s" begin="wait1.end" fill="freeze"/>
                 
                 <!-- Refill -->
-                <animate id="refill1" attributeName="width" values="294.5091514143095;294.5091514143095" dur="1s" begin="fade1.end" fill="freeze"/>
+                <animate id="refill1" attributeName="width" values="249.07612712490763;249.07612712490763" dur="1s" begin="fade1.end" fill="freeze"/>
                 <animate attributeName="opacity" values="0.2;1" dur="1s" begin="fade1.end" fill="freeze"/>
             </rect>
             
             <!-- Percentage text inside bar -->
-            <text x="284.5091514143095" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+            <text x="239.07612712490763" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
                 <animate attributeName="opacity" values="0;1" dur="0.5s" begin="fill1.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0" dur="0.5s" begin="fade1.begin" fill="freeze"/>
-                14.16%
+                13.48%
             </text>
         </g>
         
@@ -111,7 +111,7 @@
             
             <!-- Percentage -->
             <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e">
-                10.17%
+                9.68%
             </text>
             
             <!-- Background bar -->
@@ -120,25 +120,25 @@
             <!-- Animated progress bar with fill → fade → refill cycle -->
             <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#6e7681">
                 <!-- First fill animation -->
-                <animate id="fill2" attributeName="width" values="0;211.52246256239602" dur="1s" begin="0s;refill2.end" fill="freeze"/>
+                <animate id="fill2" attributeName="width" values="0;178.8617886178862" dur="1s" begin="0s;refill2.end" fill="freeze"/>
                 
                 <!-- Wait for 2 seconds -->
-                <animate id="wait2" attributeName="width" values="211.52246256239602;211.52246256239602" dur="2s" begin="fill2.end" fill="freeze"/>
+                <animate id="wait2" attributeName="width" values="178.8617886178862;178.8617886178862" dur="2s" begin="fill2.end" fill="freeze"/>
                 
                 <!-- Fade out -->
-                <animate id="fade2" attributeName="width" values="211.52246256239602;211.52246256239602" dur="1s" begin="wait2.end" fill="freeze"/>
+                <animate id="fade2" attributeName="width" values="178.8617886178862;178.8617886178862" dur="1s" begin="wait2.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0.2" dur="1s" begin="wait2.end" fill="freeze"/>
                 
                 <!-- Refill -->
-                <animate id="refill2" attributeName="width" values="211.52246256239602;211.52246256239602" dur="1s" begin="fade2.end" fill="freeze"/>
+                <animate id="refill2" attributeName="width" values="178.8617886178862;178.8617886178862" dur="1s" begin="fade2.end" fill="freeze"/>
                 <animate attributeName="opacity" values="0.2;1" dur="1s" begin="fade2.end" fill="freeze"/>
             </rect>
             
             <!-- Percentage text inside bar -->
-            <text x="201.52246256239602" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+            <text x="168.8617886178862" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
                 <animate attributeName="opacity" values="0;1" dur="0.5s" begin="fill2.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0" dur="0.5s" begin="fade2.begin" fill="freeze"/>
-                10.17%
+                9.68%
             </text>
         </g>
         
@@ -150,7 +150,7 @@
             
             <!-- Percentage -->
             <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e">
-                7.74%
+                7.36%
             </text>
             
             <!-- Background bar -->
@@ -159,25 +159,25 @@
             <!-- Animated progress bar with fill → fade → refill cycle -->
             <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#f34b7d">
                 <!-- First fill animation -->
-                <animate id="fill3" attributeName="width" values="0;160.98169717138106" dur="1s" begin="0s;refill3.end" fill="freeze"/>
+                <animate id="fill3" attributeName="width" values="0;135.99408721359944" dur="1s" begin="0s;refill3.end" fill="freeze"/>
                 
                 <!-- Wait for 2 seconds -->
-                <animate id="wait3" attributeName="width" values="160.98169717138106;160.98169717138106" dur="2s" begin="fill3.end" fill="freeze"/>
+                <animate id="wait3" attributeName="width" values="135.99408721359944;135.99408721359944" dur="2s" begin="fill3.end" fill="freeze"/>
                 
                 <!-- Fade out -->
-                <animate id="fade3" attributeName="width" values="160.98169717138106;160.98169717138106" dur="1s" begin="wait3.end" fill="freeze"/>
+                <animate id="fade3" attributeName="width" values="135.99408721359944;135.99408721359944" dur="1s" begin="wait3.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0.2" dur="1s" begin="wait3.end" fill="freeze"/>
                 
                 <!-- Refill -->
-                <animate id="refill3" attributeName="width" values="160.98169717138106;160.98169717138106" dur="1s" begin="fade3.end" fill="freeze"/>
+                <animate id="refill3" attributeName="width" values="135.99408721359944;135.99408721359944" dur="1s" begin="fade3.end" fill="freeze"/>
                 <animate attributeName="opacity" values="0.2;1" dur="1s" begin="fade3.end" fill="freeze"/>
             </rect>
             
             <!-- Percentage text inside bar -->
-            <text x="150.98169717138106" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+            <text x="125.99408721359944" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
                 <animate attributeName="opacity" values="0;1" dur="0.5s" begin="fill3.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0" dur="0.5s" begin="fade3.begin" fill="freeze"/>
-                7.74%
+                7.36%
             </text>
         </g>
         
@@ -189,7 +189,7 @@
             
             <!-- Percentage -->
             <text x="650" y="20" text-anchor="end" font-family="'Courier New', monospace" font-size="16" fill="#8b949e">
-                7.30%
+                6.95%
             </text>
             
             <!-- Background bar -->
@@ -198,25 +198,25 @@
             <!-- Animated progress bar with fill → fade → refill cycle -->
             <rect x="0" y="30" width="0" height="25" rx="12.5" ry="12.5" fill="#6e7681">
                 <!-- First fill animation -->
-                <animate id="fill4" attributeName="width" values="0;151.83028286189685" dur="1s" begin="0s;refill4.end" fill="freeze"/>
+                <animate id="fill4" attributeName="width" values="0;128.41832963784182" dur="1s" begin="0s;refill4.end" fill="freeze"/>
                 
                 <!-- Wait for 2 seconds -->
-                <animate id="wait4" attributeName="width" values="151.83028286189685;151.83028286189685" dur="2s" begin="fill4.end" fill="freeze"/>
+                <animate id="wait4" attributeName="width" values="128.41832963784182;128.41832963784182" dur="2s" begin="fill4.end" fill="freeze"/>
                 
                 <!-- Fade out -->
-                <animate id="fade4" attributeName="width" values="151.83028286189685;151.83028286189685" dur="1s" begin="wait4.end" fill="freeze"/>
+                <animate id="fade4" attributeName="width" values="128.41832963784182;128.41832963784182" dur="1s" begin="wait4.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0.2" dur="1s" begin="wait4.end" fill="freeze"/>
                 
                 <!-- Refill -->
-                <animate id="refill4" attributeName="width" values="151.83028286189685;151.83028286189685" dur="1s" begin="fade4.end" fill="freeze"/>
+                <animate id="refill4" attributeName="width" values="128.41832963784182;128.41832963784182" dur="1s" begin="fade4.end" fill="freeze"/>
                 <animate attributeName="opacity" values="0.2;1" dur="1s" begin="fade4.end" fill="freeze"/>
             </rect>
             
             <!-- Percentage text inside bar -->
-            <text x="141.83028286189685" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
+            <text x="118.41832963784182" y="48" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="bold" opacity="0">
                 <animate attributeName="opacity" values="0;1" dur="0.5s" begin="fill4.end" fill="freeze"/>
                 <animate attributeName="opacity" values="1;0" dur="0.5s" begin="fade4.begin" fill="freeze"/>
-                7.30%
+                6.95%
             </text>
         </g>
         
