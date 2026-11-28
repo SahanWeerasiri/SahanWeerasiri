@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://www.linkedin.com/in/sahan-weerasiri-1524482b0"><img src="https://img.shields.io/badge/LinkedIn-0d1117?style=flat-square&logo=linkedin&logoColor=0077B5" alt="LinkedIn" /></a>
-  <a href="mailto:sahanw@enigmasolutionslk.com"><img src="https://img.shields.io/badge/Email-0d1117?style=flat-square&logo=gmail&logoColor=D14836" alt="Email" /></a>
+  <a href="mailto:smudunlahiru@gmail.com"><img src="https://img.shields.io/badge/Email-0d1117?style=flat-square&logo=gmail&logoColor=D14836" alt="Email" /></a>
   <a href="https://github.com/SahanWeerasiri"><img src="https://img.shields.io/badge/GitHub-0d1117?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
