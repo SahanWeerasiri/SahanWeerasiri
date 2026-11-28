@@ -1,65 +1,236 @@
-<svg width="800" height="280" viewBox="0 0 800 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="820" height="670" viewBox="0 0 820 670" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="820" y2="670" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080b11"/>
+      <stop offset="1" stop-color="#0f141c"/>
+    </linearGradient>
+  </defs>
+
   <!-- Terminal Window Background -->
-  <rect width="800" height="280" rx="10" fill="#0a0d14"/>
-  <rect x="0.5" y="0.5" width="799" height="279" rx="9.5" stroke="#1f2937"/>
+  <rect width="820" height="670" rx="10" fill="url(#cardGrad)"/>
+  <rect x="0.5" y="0.5" width="819" height="669" rx="9.5" stroke="#1e293b"/>
 
   <!-- Window Control Buttons -->
-  <circle cx="25" cy="22" r="6" fill="#ff5f56"/>
-  <circle cx="45" cy="22" r="6" fill="#ffbd2e"/>
-  <circle cx="65" cy="22" r="6" fill="#27c93f"/>
+  <circle cx="25" cy="20" r="6" fill="#ff5f56"/>
+  <circle cx="45" cy="20" r="6" fill="#ffbd2e"/>
+  <circle cx="65" cy="20" r="6" fill="#27c93f"/>
 
   <!-- Window Header Title -->
-  <text x="400" y="26" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="12" fill="#64748b">sahan@kali-terminal: ~</text>
-  <line x1="0" y1="38" x2="800" y2="38" stroke="#1f2937" stroke-width="1"/>
+  <text x="410" y="24" text-anchor="middle" font-family="'Courier New', Courier, monospace" font-size="12" fill="#64748b">sahan@kali-terminal: ~</text>
+  <line x1="0" y1="38" x2="820" y2="38" stroke="#1e293b" stroke-width="1"/>
 
-  <!-- Command 1: whoami -->
-  <g transform="translate(25, 68)">
+  <!-- ==================== COMMAND 1: WHOAMI ==================== -->
+  <g transform="translate(25, 65)">
     <text font-family="'Courier New', Courier, monospace" font-size="13">
       <tspan fill="#00f5d4" font-weight="bold">sahan@sec-ops:~$</tspan>
       <tspan fill="#f8fafc"> whoami --verbose</tspan>
     </text>
 
     <!-- Vertical Accent Line -->
-    <line x1="4" y1="14" x2="4" y2="120" stroke="#00f5d4" stroke-width="2" opacity="0.6"/>
+    <line x1="4" y1="14" x2="4" y2="100" stroke="#00f5d4" stroke-width="2" opacity="0.7"/>
 
     <g transform="translate(18, 0)">
-      <text y="32" font-family="'Courier New', Courier, monospace" font-size="12.5">
+      <text y="30" font-family="'Courier New', Courier, monospace" font-size="12.5">
         <tspan fill="#38bdf8" font-weight="bold">Identity       :</tspan>
         <tspan fill="#f1f5f9"> Sahan Weerasiri </tspan>
         <tspan fill="#94a3b8">(@SahanWeerasiri)</tspan>
       </text>
 
-      <text y="54" font-family="'Courier New', Courier, monospace" font-size="12.5">
+      <text y="52" font-family="'Courier New', Courier, monospace" font-size="12.5">
         <tspan fill="#38bdf8" font-weight="bold">Education      :</tspan>
         <tspan fill="#f1f5f9"> Undergraduate in Computer Science &amp; Engineering</tspan>
       </text>
 
-      <text y="76" font-family="'Courier New', Courier, monospace" font-size="12.5">
+      <text y="74" font-family="'Courier New', Courier, monospace" font-size="12.5">
         <tspan fill="#38bdf8" font-weight="bold">Specialization :</tspan>
         <tspan fill="#f1f5f9"> Cyber Security</tspan>
       </text>
 
-      <text y="98" font-family="'Courier New', Courier, monospace" font-size="12.5">
-        <tspan fill="#38bdf8" font-weight="bold">Repositories   :</tspan>
-        <tspan fill="#f1f5f9"> 132 Total </tspan>
-        <tspan fill="#94a3b8">(Public &amp; Private)</tspan>
-      </text>
-
-      <text y="120" font-family="'Courier New', Courier, monospace" font-size="12.5">
-        <tspan fill="#38bdf8" font-weight="bold">Platform Age   :</tspan>
-        <tspan fill="#f1f5f9"> Member Since April 2023</tspan>
+      <text y="96" font-family="'Courier New', Courier, monospace" font-size="12.5">
+        <tspan fill="#38bdf8" font-weight="bold">Account Tenure :</tspan>
+        <tspan fill="#f1f5f9"> Member Since April 27, 2023 </tspan>
+        <tspan fill="#94a3b8">(3+ years active)</tspan>
       </text>
     </g>
   </g>
 
-  <!-- Command 2: cat status -->
-  <g transform="translate(25, 235)">
+  <!-- ==================== COMMAND 2: GITHUB STATS ==================== -->
+  <g transform="translate(25, 195)">
     <text font-family="'Courier New', Courier, monospace" font-size="13">
       <tspan fill="#00f5d4" font-weight="bold">sahan@sec-ops:~$</tspan>
-      <tspan fill="#f8fafc"> cat /proc/status | grep State</tspan>
+      <tspan fill="#f8fafc"> cat ~/.github_stats</tspan>
     </text>
-    <text x="18" y="22" font-family="'Courier New', Courier, monospace" font-size="12" fill="#22c55e">
-      State: ACTIVE (System Operational • Exploring Cyber Security &amp; Computing)
+
+    <!-- Row 1 Cards -->
+    <g transform="translate(0, 16)">
+      <!-- Repos -->
+      <rect x="0" y="0" width="182" height="44" rx="6" fill="#111827" stroke="#1f2937"/>
+      <text x="12" y="18" font-family="'Courier New', Courier, monospace" font-size="10" fill="#94a3b8">REPOSITORIES</text>
+      <text x="12" y="34" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" fill="#38bdf8">132 Total</text>
+
+      <!-- Stars -->
+      <rect x="196" y="0" width="182" height="44" rx="6" fill="#111827" stroke="#1f2937"/>
+      <text x="208" y="18" font-family="'Courier New', Courier, monospace" font-size="10" fill="#94a3b8">STARS EARNED</text>
+      <text x="208" y="34" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" fill="#facc15">37 ⭐</text>
+
+      <!-- Commits -->
+      <rect x="392" y="0" width="182" height="44" rx="6" fill="#111827" stroke="#1f2937"/>
+      <text x="404" y="18" font-family="'Courier New', Courier, monospace" font-size="10" fill="#94a3b8">COMMITS (YEAR)</text>
+      <text x="404" y="34" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" fill="#00f5d4">455</text>
+
+      <!-- PRs -->
+      <rect x="588" y="0" width="182" height="44" rx="6" fill="#111827" stroke="#1f2937"/>
+      <text x="600" y="18" font-family="'Courier New', Courier, monospace" font-size="10" fill="#94a3b8">PULL REQUESTS</text>
+      <text x="600" y="34" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" fill="#22c55e">299 Created</text>
+    </g>
+
+    <!-- Row 2 Cards -->
+    <g transform="translate(0, 68)">
+      <!-- Issues -->
+      <rect x="0" y="0" width="182" height="44" rx="6" fill="#111827" stroke="#1f2937"/>
+      <text x="12" y="18" font-family="'Courier New', Courier, monospace" font-size="10" fill="#94a3b8">ISSUES CREATED</text>
+      <text x="12" y="34" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" fill="#f87171">248</text>
+
+      <!-- Contributed -->
+      <rect x="196" y="0" width="182" height="44" rx="6" fill="#111827" stroke="#1f2937"/>
+      <text x="208" y="18" font-family="'Courier New', Courier, monospace" font-size="10" fill="#94a3b8">CONTRIBUTED TO</text>
+      <text x="208" y="34" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" fill="#c084fc">31 Repos</text>
+
+      <!-- Followers -->
+      <rect x="392" y="0" width="182" height="44" rx="6" fill="#111827" stroke="#1f2937"/>
+      <text x="404" y="18" font-family="'Courier New', Courier, monospace" font-size="10" fill="#94a3b8">COMMUNITY</text>
+      <text x="404" y="34" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" fill="#f472b6">11 Followers</text>
+
+      <!-- Joined -->
+      <rect x="588" y="0" width="182" height="44" rx="6" fill="#111827" stroke="#1f2937"/>
+      <text x="600" y="18" font-family="'Courier New', Courier, monospace" font-size="10" fill="#94a3b8">OPERATIONAL SINCE</text>
+      <text x="600" y="34" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold" fill="#e2e8f0">April 2023</text>
+    </g>
+  </g>
+
+  <!-- ==================== COMMAND 3: LANGUAGES ==================== -->
+  <g transform="translate(25, 345)">
+    <text font-family="'Courier New', Courier, monospace" font-size="13">
+      <tspan fill="#00f5d4" font-weight="bold">sahan@sec-ops:~$</tspan>
+      <tspan fill="#f8fafc"> cat ~/.languages</tspan>
     </text>
+
+    <!-- Column 1 -->
+    <g transform="translate(0, 18)">
+      <!-- Python -->
+      <g transform="translate(0, 10)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">Python</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="135" height="8" rx="4" fill="#3572A5"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">27.06%</text>
+      </g>
+
+      <!-- Java -->
+      <g transform="translate(0, 32)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">Java</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="68" height="8" rx="4" fill="#b07219"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">13.48%</text>
+      </g>
+
+      <!-- Tcl -->
+      <g transform="translate(0, 54)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">Tcl</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="48" height="8" rx="4" fill="#e4cc98"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">9.68%</text>
+      </g>
+
+      <!-- C++ -->
+      <g transform="translate(0, 76)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">C++</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="37" height="8" rx="4" fill="#f34b7d"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">7.36%</text>
+      </g>
+
+      <!-- C -->
+      <g transform="translate(0, 98)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">C</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="35" height="8" rx="4" fill="#64748b"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">6.95%</text>
+      </g>
+    </g>
+
+    <!-- Column 2 -->
+    <g transform="translate(400, 18)">
+      <!-- JavaScript -->
+      <g transform="translate(0, 10)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">JavaScript</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="32" height="8" rx="4" fill="#f1e05a"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">6.36%</text>
+      </g>
+
+      <!-- VHDL -->
+      <g transform="translate(0, 32)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">VHDL</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="31" height="8" rx="4" fill="#498b7a"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">6.28%</text>
+      </g>
+
+      <!-- CMake -->
+      <g transform="translate(0, 54)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">CMake</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="27" height="8" rx="4" fill="#064f8c"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">5.39%</text>
+      </g>
+
+      <!-- Jupyter -->
+      <g transform="translate(0, 76)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">Notebook</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="17" height="8" rx="4" fill="#DA5B0B"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">3.31%</text>
+      </g>
+
+      <!-- Shell -->
+      <g transform="translate(0, 98)">
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#e2e8f0">Shell</text>
+        <rect x="110" y="1" width="160" height="8" rx="4" fill="#1f2937"/>
+        <rect x="110" y="1" width="15" height="8" rx="4" fill="#89e051"/>
+        <text x="285" y="10" font-family="'Courier New', Courier, monospace" font-size="11" fill="#94a3b8">2.88%</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== COMMAND 4: PING CONTACT ==================== -->
+  <g transform="translate(25, 510)">
+    <text font-family="'Courier New', Courier, monospace" font-size="13">
+      <tspan fill="#00f5d4" font-weight="bold">sahan@sec-ops:~$</tspan>
+      <tspan fill="#f8fafc"> ping -c 3 contact.sahan</tspan>
+    </text>
+
+    <text y="24" font-family="'Courier New', Courier, monospace" font-size="11.5" fill="#64748b">PING contact.sahan (127.0.0.1): 56 data bytes</text>
+
+    <g transform="translate(0, 32)">
+      <text y="12" font-family="'Courier New', Courier, monospace" font-size="12">
+        <tspan fill="#94a3b8">64 bytes from 127.0.0.1: seq=1 time=0.031ms -&gt; </tspan>
+        <tspan fill="#38bdf8" font-weight="bold">[LinkedIn]</tspan>
+        <tspan fill="#e2e8f0"> linkedin.com/in/sahan-weerasiri-1524482b0</tspan>
+      </text>
+
+      <text y="30" font-family="'Courier New', Courier, monospace" font-size="12">
+        <tspan fill="#94a3b8">64 bytes from 127.0.0.1: seq=2 time=0.029ms -&gt; </tspan>
+        <tspan fill="#00f5d4" font-weight="bold">[GitHub]  </tspan>
+        <tspan fill="#e2e8f0"> github.com/SahanWeerasiri</tspan>
+      </text>
+
+      <text y="48" font-family="'Courier New', Courier, monospace" font-size="12">
+        <tspan fill="#94a3b8">64 bytes from 127.0.0.1: seq=3 time=0.034ms -&gt; </tspan>
+        <tspan fill="#f87171" font-weight="bold">[Email]   </tspan>
+        <tspan fill="#e2e8f0"> sahanw@enigmasolutionslk.com</tspan>
+      </text>
+
+      <text y="68" font-family="'Courier New', Courier, monospace" font-size="11" fill="#22c55e">--- contact.sahan ping statistics: 3 packets transmitted, 3 received, 0.0% loss ---</text>
+    </g>
   </g>
 </svg>
