@@ -9,7 +9,7 @@
 =============================================================
  • Degree : B.Sc. (Hons) in Computer Science & Engineering
  • Spec   : Cyber Security & Systems Engineering
- • Node   : Sri Lanka | Status: ACTIVE [CTF & Security Research]
+ • Node   : Sri Lanka | Status: ACTIVE [Security Operations]
 =============================================================
 ```
 
@@ -20,8 +20,6 @@
 <p align="center">
   <a href="https://www.linkedin.com/in/sahan-weerasiri-1524482b0"><img src="https://img.shields.io/badge/LinkedIn-0d1117?style=flat-square&logo=linkedin&logoColor=0077B5" alt="LinkedIn" /></a>
   <a href="mailto:sahanw@enigmasolutionslk.com"><img src="https://img.shields.io/badge/Email-0d1117?style=flat-square&logo=gmail&logoColor=D14836" alt="Email" /></a>
-  <a href="https://tryhackme.com/p/SahanWeerasiri"><img src="https://img.shields.io/badge/TryHackMe-0d1117?style=flat-square&logo=tryhackme&logoColor=red" alt="TryHackMe" /></a>
-  <a href="https://app.hackthebox.com/profile/SahanWeerasiri"><img src="https://img.shields.io/badge/HackTheBox-0d1117?style=flat-square&logo=hackthebox&logoColor=9FEF00" alt="HackTheBox" /></a>
   <a href="https://github.com/SahanWeerasiri"><img src="https://img.shields.io/badge/GitHub-0d1117?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
@@ -41,11 +39,11 @@
   "Security is an adversarial engineering discipline.
    To fortify systems, you must first understand how they fracture."
 
-[CORE OBJECTIVES]
-  • Offensive Security: Penetration testing, WebApp security auditing (OWASP Top 10)
-  • Low-Level Systems : C/C++ memory safety, POSIX system calls, x86/ARM Assembly, VHDL
-  • Defensive Ops     : Deep packet inspection (Wireshark), IDS/IPS (Snort), Linux hardening
-  • Security Research : Active CTF player tackling binary exploitation, reverse engineering & pwn
+[CORE CAPABILITIES]
+  • Offensive Security : Penetration testing, WebApp auditing (OWASP Top 10), Metasploit
+  • Network & Defense  : Wireshark deep packet inspection, Snort IDS, Nmap scanning
+  • Low-Level Systems  : C/C++ memory security, Ghidra binary analysis, John the Ripper
+  • Automation & Ops   : Python security scripting, Bash automation, Docker, Git, Kali Linux
 ```
 
 ---
@@ -55,20 +53,20 @@
 ```text
 Starting Nmap 7.94 ( https://nmap.org ) at 2026-11-28 00:00 UTC
 Nmap scan report for localhost (127.0.0.1)
-Host is up (0.00018s latency).
+Host is up (0.00014s latency).
 
 PORT      STATE SERVICE         VERSION / TOOLKIT
-21/tcp    open  languages       Python 3.x, C/C++, Java, Bash, SQL, x86 Assembly, VHDL
-22/tcp    open  sec-tooling     Kali Linux, Burp Suite, Wireshark, Nmap, Metasploit, Ghidra
-80/tcp    open  appsec          OWASP Top 10, Burp Suite Pro, SQLi, XSS, SSRF, CSRF, API Auditing
-443/tcp   open  network-sec     TCP/IP Protocol Stack, Packet Inspection, Snort IDS, TLS/SSL
-3306/tcp  open  low-level       POSIX Calls, Memory Management, Buffer Overflows, Digital Logic
-8080/tcp  open  infra-devops    Linux/Ubuntu, Docker Containers, Git, GitHub Actions, VS Code
+21/tcp    open  languages       Python 3.x, C, C++, Bash
+22/tcp    open  sec-auditing    Kali Linux, Burp Suite, Nmap, Metasploit, John the Ripper
+80/tcp    open  appsec          OWASP Top 10, Web Penetration Testing, Burp Suite Proxy
+443/tcp   open  network-sec     Wireshark Packet Inspection, Snort IDS, Traffic Forensics
+3306/tcp  open  reversing       Ghidra Disassembler, Binary Analysis, C/C++
+8080/tcp  open  containers-env  Docker, Git, Linux Environment
 
 Service detection performed. 6 open ports inspected.
 ```
 
-#### 📦 Installed Security Packages & Environment:
+#### 📦 Active Security Toolkit & Core Languages:
 <p>
   <img src="https://img.shields.io/badge/Kali_Linux-0d1117?style=flat-square&logo=kali-linux&logoColor=00f5d4" alt="Kali Linux" />
   <img src="https://img.shields.io/badge/Burp_Suite-0d1117?style=flat-square&logo=burp-suite&logoColor=FF6633" alt="Burp Suite" />
@@ -88,48 +86,24 @@ Service detection performed. 6 open ports inspected.
 
 ---
 
-### 🚩 `$ cat ~/.ctf_profile.json`
-
-```json
-{
-  "operator": "SahanWeerasiri",
-  "active_arenas": ["TryHackMe", "Hack The Box", "CTFtime"],
-  "specialties": [
-    "Web Application Exploitation",
-    "Binary Exploitation (Pwn)",
-    "Network Protocol Dissection",
-    "Reverse Engineering"
-  ],
-  "training_status": "Solving real-world machine targets & auditing vulnerability labs"
-}
-```
-
-<p align="center">
-  <a href="https://tryhackme.com/p/SahanWeerasiri">
-    <img src="https://tryhackme-badges.s3.amazonaws.com/SahanWeerasiri.png" alt="TryHackMe Badge" height="140" />
-  </a>
-</p>
-
----
-
 ### 📁 `$ ls -la ~/featured_research/`
 
 ```text
 total 24
 drwxr-xr-x 6 sahan secops 4096 Nov 28 00:00 .
 drwxr-xr-x 8 sahan secops 4096 Nov 28 00:00 ..
-drwxr-xr-x 2 sahan secops 4096 Nov 28 00:00 ctf-writeups-and-walkthroughs  --> Documented machine writeups, exploit PoCs & methodologies
-drwxr-xr-x 2 sahan secops 4096 Nov 28 00:00 network-traffic-analyzer       --> Custom Python/Bash packet inspection & threat detection scripts
-drwxr-xr-x 2 sahan secops 4096 Nov 28 00:00 low-level-systems-engineering  --> C/C++ memory corruption analysis, POSIX calls & VHDL design
-drwxr-xr-x 2 sahan secops 4096 Nov 28 00:00 safe-sri-lanka                 --> Security-centric architecture for civic and personal safety
+drwxr-xr-x 2 sahan secops 4096 Nov 28 00:00 network-traffic-analyzer       --> Python packet sniffing, Wireshark dissection & Snort rule creation
+drwxr-xr-x 2 sahan secops 4096 Nov 28 00:00 webapp-vulnerability-auditing  --> OWASP Top 10 assessment, Burp Suite workflows & Nmap reconnaissance
+drwxr-xr-x 2 sahan secops 4096 Nov 28 00:00 binary-reverse-engineering     --> C/C++ memory exploration, Ghidra decompilation & Metasploit PoCs
+drwxr-xr-x 2 sahan secops 4096 Nov 28 00:00 security-automation-scripts    --> Automated recon and vulnerability scanning tools in Python & Bash
 ```
 
-| Project / Repository | Category | Architecture & Focus |
+| Research & Project Focus | Core Tooling | Technical Highlights |
 | :--- | :--- | :--- |
-| **[CTF Solutions & Writeups](https://github.com/SahanWeerasiri)** | Offensive Security | Step-by-step documentation of machine pwns, web exploits, and reverse engineering solutions. |
-| **[Security Tooling & Scripts](https://github.com/SahanWeerasiri)** | Automation / SecOps | Python and Bash scripts for network reconnaissance, banner grabbing, and port scanning. |
-| **[Systems & Architecture](https://github.com/SahanWeerasiri)** | Low-Level Engineering | Exploring memory safety, pointer mechanics, buffer overflows, and hardware logic in C & VHDL. |
-| **[Safe-Sri-Lanka](https://github.com/SahanWeerasiri)** | AppSec / Collaborative | Mobile application engineering with defensive principles, robust data integrity, and secure APIs. |
+| **[Network Traffic & Threat Analysis](https://github.com/SahanWeerasiri)** | Python, Wireshark, Snort | Network packet dissection, detecting anomalies, and writing custom Snort IDS signatures. |
+| **[Web Application Security Auditing](https://github.com/SahanWeerasiri)** | Burp Suite, OWASP, Nmap | Identifying and mitigating OWASP Top 10 vulnerabilities (SQLi, XSS, CSRF, auth flaws). |
+| **[Low-Level Systems & Reversing](https://github.com/SahanWeerasiri)** | C/C++, Ghidra, Metasploit | Binary disassembly, understanding memory structures, and analyzing vulnerability exploitation. |
+| **[Security Automation & DevSecOps](https://github.com/SahanWeerasiri)** | Python, Bash, Docker, Git | Automating repetitive reconnaissance, credential checks (John), and containerized testing setups. |
 
 ---
 
@@ -141,11 +115,7 @@ Querying GitHub API metrics for user @SahanWeerasiri... [200 OK]
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=SahanWeerasiri&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00f5d4&icon_color=38bdf8&text_color=94a3b8" alt="GitHub Stats" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SahanWeerasiri&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00f5d4&text_color=94a3b8" alt="Top Languages" width="48%" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=SahanWeerasiri&theme=tokyonight&hide_border=true&background=0d1117&ring=00f5d4&fire=00f5d4&currStreakNum=00f5d4&sideNums=38bdf8&sideLabels=94a3b8&dates=64748b" alt="GitHub Streak" width="96%" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=SahanWeerasiri&theme=tokyonight&hide_border=true&background=0d1117&ring=00f5d4&fire=00f5d4&currStreakNum=00f5d4&sideNums=38bdf8&sideLabels=94a3b8&dates=64748b" alt="GitHub Streak" width="48%" />
 </p>
 
 ---
@@ -160,7 +130,7 @@ PING contact.sahan.sec (127.0.0.1): 56 data bytes
 
 --- contact.sahan.sec ping statistics ---
 3 packets transmitted, 3 packets received, 0.0% packet loss
-Ready to collaborate on CTFs, security tool development, and systems engineering.
+Ready to collaborate on security tool development, systems engineering, and research.
 ```
 
 <p align="center">
