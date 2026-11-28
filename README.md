@@ -1,17 +1,17 @@
 ```text
 ┌──(sahan㉿terminal)-[~]
 └─$ cat /etc/motd
-  ____        _                 _           _     _           
- / ___|  __ _| |__   __ _ _ __ | |    __ _ | |__ (_)_ __ _   
- \___ \ / _` | '_ \ / _` | '_ \| |   / _` || '_ \| | '__/ |  
-  ___) | (_| | | | | (_| | | | | |__| (_| || | | | | | | |_  
- |____/ \__,_|_| |_|\__,_|_| |_|_____\__,_||_| |_|_|_|  \__| 
-=============================================================
+  ____        _                  __        __                      _      _ 
+ / ___|  __ _| |__   __ _ _ __   \ \      / /__  ___ _ __ __ _ ___(_)_ __(_)
+ \___ \ / _` | '_ \ / _` | '_ \   \ \ /\ / / _ \/ _ \ '__/ _` / __| | '__| |
+  ___) | (_| | | | | (_| | | | |   \ V  V /  __/  __/ | | (_| \__ \ | |  | |
+ |____/ \__,_|_| |_|\__,_|_| |_|    \_/\_/ \___|\___|_|  \__,_|___/_|_|  |_|
+============================================================================
  • Name   : Sahan Weerasiri (@SahanWeerasiri)
  • Degree : Undergraduate in Computer Science & Engineering
  • Focus  : Specialized in Cyber Security
  • Member : Joined GitHub in April 2023
-=============================================================
+============================================================================
 ```
 
 <p align="center">
@@ -28,16 +28,9 @@
 
 ### 💻 `$ whoami --verbose`
 
-```yaml
-[USER PROFILE]
-  Name           : Sahan Weerasiri
-  Username       : SahanWeerasiri
-  Education      : Undergraduate in Computer Science and Engineering
-  Specialization : Cyber Security
-  Account Status : Active (Joined April 27, 2023)
-  Repositories   : 132 Total (Public & Private)
-  Community      : 11 Followers | 31 Contributed Repositories
-```
+<p align="center">
+  <img src="terminal.svg" alt="Terminal Profile" width="100%" />
+</p>
 
 ---
 
